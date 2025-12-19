@@ -49,6 +49,17 @@ namespace Dmitry_s_Project
             }
 
 
+            /*
+             näiteprogramm 3:
+
+            klient tahab et programm teeks:
+            - küsib kasutajalt tema kasutajaNime
+            - küsib kasutajalt tema parooli
+            - logib kasutaja sisse kui mõlemad on õiged
+            */
+            // hint: mida teeb &&?
+
+            /* siia käib vooskeemi järgi kirjutatud kood näidisülesanne 3 kohta */
 
 
 
