@@ -1,0 +1,2 @@
+# Konspekt_Dmitri_Bogdanov_LOGITge25
+programeerimiste aluste konspekt
