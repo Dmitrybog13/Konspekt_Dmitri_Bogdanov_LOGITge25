@@ -141,25 +141,39 @@ namespace Dmitry_s_Project
             muutuja--; */
 
             /* näiteülesanne 5 */
-            
-            Console.WriteLine("Kui kaugele oli su viimane kuulitõuge (M)?");
-            float kaugus = float.Parse(Console.ReadLine());
-            if (kaugus <= 1.00)
-            {
-                Console.WriteLine("Sa suudad kindlasti rohkem, cmon bruh");
-            }
-            else if (kaugus <= 2.00)
-            {
-                Console.WriteLine("noh tuleb juba, jõuad veel!");
-            }
-            else if (kaugus <= 3.00)
-            {
-                Console.WriteLine("TUBLI kolm meetrit umbes, peaaegu, vist... not sure");
-            }
-            else
-            {
-                Console.WriteLine("Ossaraks, seda on varsti orbiidilt näha");
-            }
+
+            //Console.WriteLine("Kui kaugele oli su viimane kuulitõuge (M)?");
+            //float kaugus = float.Parse(Console.ReadLine());
+            //if ( kaugus <= 1.00  && kaugus >= 0.00 )
+            //{
+            //    Console.WriteLine("Sa suudad kindlasti rohkem, cmon bruh");
+            //}
+            //else if (kaugus <= 2.00 || kaugus >= 1.01)
+            //{
+            //    Console.WriteLine("noh tuleb juba, jõuad veel!");
+            //}
+            //else if (kaugus <= 3.00 && kaugus >= 2.01 )
+            //{
+            //    Console.WriteLine("TUBLI kolm meetrit umbes, peaaegu, vist... not sure");
+            //}
+            //else if (kaugus < 0)
+            //{
+            //    Console.WriteLine("MIKS SA TAGURPIDI VISKAD???????????!!?!?!?!?!?");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Ossaraks, seda on varsti orbiidilt näha");
+            //}
+
+            /* -= VÕRDLUSOPERAATORID =- */
+            // == -> "on võrdne/on täpselt sama" - võrdusmärkide ühel pool olev objekt peab vastama
+            //        oma olemuselt täpselt võrdusmärkide teisel pool oleva objektiga
+            // > -> "on suurem kui" - Märgist vasakul pool olev objekt peaks olema suurem kui paremal pool olev objekt
+            // > -> "on väiksem kui" - Märgist vasakul pool olev objekt peaks olema väiksem kui paremal pool olev objekt
+            // >= -> "on suurem kui, või samavõrdne" - märgist vasakul pool olev objekt peaks olema vähem,alt sama suur või suurem kui paremal pool olev objekt
+            // <= "on väiksem kui, või samavõrdne" - märgist vasakul pool olev objekt peaks olema maksimaalselt sama suur või väiksem kui paremal pool olev objekt
+            // != -> "ei tohi olla" võrdusmärgi vasakul pool olev objekt ei tohi omada INDENTSET kuju paremal pool oleva objektiga, kõik muud väärtused on lubatud
+
         }
     }
 }
