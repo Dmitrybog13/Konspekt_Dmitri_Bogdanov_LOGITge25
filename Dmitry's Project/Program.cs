@@ -36,7 +36,7 @@ namespace Dmitry_s_Project
              */
 
 
-            int KasutajaVanus = 0;
+            /*int KasutajaVanus = 0;
             Console.WriteLine("kui vana sa oled?");
             KasutajaVanus = int.Parse(Console.ReadLine());
             if (KasutajaVanus > 18)
@@ -61,6 +61,48 @@ namespace Dmitry_s_Project
 
             /* siia käib vooskeemi järgi kirjutatud kood näidisülesanne 3 kohta */
 
+            int mingiarv = 4;
+
+            mingiarv = mingiarv + 15; //
+            mingiarv = mingiarv * 15; // 
+            mingiarv = mingiarv - 15; // 
+            mingiarv = mingiarv / 15; //
+
+
+            mingiarv += 15;
+            mingiarv -= 15;
+            mingiarv *= 15;
+            mingiarv /= 15;
+
+            /*naiteulesanne 4 */
+            Console.WriteLine("Palun sisesta oma vanus"); 
+            // esitame kasutajale küsimuse, console writeline kuvamisfunktsiooniga
+            int kasutajavanus = int.Parse(Console.ReadLine()); 
+            // tekitame muutuja kasutajavanus ning omistame sinna käsurealt int.Parser abiga täisarvu
+            Console.WriteLine("Palun sisesta oma vanavanema vanus");
+            // esitame kasutajale küsimuse, console writeline kuvamisfunktsiooniga
+            int kasutajaVanavanemaVanus = int.Parse(Console.ReadLine());
+            // tekitame muutuja kasutajavanus ning omistame sinna käsurealt int.Parser abiga täisarvu
+            int vanusteVahe = kasutajaVanavanemaVanus - kasutajavanus;
+            // tekitame uue täisarvu muutuja kuhu omistame avaldise kasutajavanavanemavanus - kasutajavanus tulemuse
+            Console.WriteLine(kasutajaVanavanemaVanus - kasutajavanus);
+            // Saab ka otse kuvada, ilma muutujata
+            Console.WriteLine("Kui palju sa vanem olid?");
+            // esitame kasutajale küsimuse, console writeline kuvamisfunktsiooniga
+            kasutajavanus += int.Parse(Console.ReadLine());
+            // kasutame omistusoperaatorit, et lisada muutujale kasutaja poolt esitatud täisarvu
+            Console.WriteLine("vanuste vahe on nüüd: " + (kasutajaVanavanemaVanus - kasutajavanus));
+            // kuvame uuesti vanuste vahe koos tekstiga
+
+            /*
+            Üleval harjutuses
+             
+             
+             
+             
+             All teooria
+             */
+
 
 
 
@@ -77,6 +119,27 @@ namespace Dmitry_s_Project
             //        /**/
             //        string string ´= "abc" //is bäd
             //        string sõne = "abc" //is gud
+
+            /* -= O M I S T U S O P E R A A T O R I D =-  */
+
+            // =   -> üksik vürdusmärk omistab muutja sisse väärtuse, mida adresseritakse muutuja enda nimega
+            int muutuja = 1;
+            // += -> võrdusmärk mille ees on pluss, automaatselt liidab muutujale otsa võrdusmärgi teisel pool oleva väärtuse
+            muutuja += 2;
+            // += -> võrdusmärk mille ees on miinus, automaatselt lahutab muutujas olevast väärtusest võrdusmärki teisel pool oleva väärtuse
+            muutuja -= 1;
+            // += -> võrdusmärk mille ees on korrutusmärk, automaatselt korrutab muutuja sisu võrdusmärgi teisel pool oleva väärtuse kordi
+            muutuja *= 3;
+            // += -> võrdusmärk mille ees on jagamismärk, automaatselt jagab muutuja sisu võrdusmärgi teisel pool oleva väärtuse osadeks
+            muutuja /= 4;
+            // %= -> võrdusmärk mille ees on modulus, automaatselt jätab muutujasse jäägi
+            muutuja %= 2;
+
+            // ++ -> on kiirtehe, mis muutujale liidab ainult ühe juurde.
+            muutuja++;
+            // -- -> on kiirtehe, mis muutujast lahutab ainult ühe maha.
+            muutuja--;
+
 
         }
     }
