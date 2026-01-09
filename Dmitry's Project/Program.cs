@@ -61,7 +61,7 @@ namespace Dmitry_s_Project
 
             /* siia käib vooskeemi järgi kirjutatud kood näidisülesanne 3 kohta */
 
-            int mingiarv = 4;
+            /*int mingiarv = 4;
 
             mingiarv = mingiarv + 15; //
             mingiarv = mingiarv * 15; // 
@@ -75,7 +75,7 @@ namespace Dmitry_s_Project
             mingiarv /= 15;
 
             /*naiteulesanne 4 */
-            Console.WriteLine("Palun sisesta oma vanus"); 
+            /* Console.WriteLine("Palun sisesta oma vanus"); 
             // esitame kasutajale küsimuse, console writeline kuvamisfunktsiooniga
             int kasutajavanus = int.Parse(Console.ReadLine()); 
             // tekitame muutuja kasutajavanus ning omistame sinna käsurealt int.Parser abiga täisarvu
@@ -122,7 +122,7 @@ namespace Dmitry_s_Project
 
             /* -= O M I S T U S O P E R A A T O R I D =-  */
 
-            // =   -> üksik vürdusmärk omistab muutja sisse väärtuse, mida adresseritakse muutuja enda nimega
+            /* // =   -> üksik vürdusmärk omistab muutja sisse väärtuse, mida adresseritakse muutuja enda nimega
             int muutuja = 1;
             // += -> võrdusmärk mille ees on pluss, automaatselt liidab muutujale otsa võrdusmärgi teisel pool oleva väärtuse
             muutuja += 2;
@@ -138,9 +138,28 @@ namespace Dmitry_s_Project
             // ++ -> on kiirtehe, mis muutujale liidab ainult ühe juurde.
             muutuja++;
             // -- -> on kiirtehe, mis muutujast lahutab ainult ühe maha.
-            muutuja--;
+            muutuja--; */
 
-
+            /* näiteülesanne 5 */
+            
+            Console.WriteLine("Kui kaugele oli su viimane kuulitõuge (M)?");
+            float kaugus = float.Parse(Console.ReadLine());
+            if (kaugus <= 1.00)
+            {
+                Console.WriteLine("Sa suudad kindlasti rohkem, cmon bruh");
+            }
+            else if (kaugus <= 2.00)
+            {
+                Console.WriteLine("noh tuleb juba, jõuad veel!");
+            }
+            else if (kaugus <= 3.00)
+            {
+                Console.WriteLine("TUBLI kolm meetrit umbes, peaaegu, vist... not sure");
+            }
+            else
+            {
+                Console.WriteLine("Ossaraks, seda on varsti orbiidilt näha");
+            }
         }
     }
 }
