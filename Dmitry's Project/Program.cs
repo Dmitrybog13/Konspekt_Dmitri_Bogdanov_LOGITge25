@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.Tracing;
+using System.Net.NetworkInformation;
 
 namespace Dmitry_s_Project
 {
@@ -173,6 +174,17 @@ namespace Dmitry_s_Project
             // >= -> "on suurem kui, või samavõrdne" - märgist vasakul pool olev objekt peaks olema vähem,alt sama suur või suurem kui paremal pool olev objekt
             // <= "on väiksem kui, või samavõrdne" - märgist vasakul pool olev objekt peaks olema maksimaalselt sama suur või väiksem kui paremal pool olev objekt
             // != -> "ei tohi olla" võrdusmärgi vasakul pool olev objekt ei tohi omada INDENTSET kuju paremal pool oleva objektiga, kõik muud väärtused on lubatud
+
+            /* -= LOOGILISED TEHTED =-          */
+            // && -> "AND"  loogiline tehe, mida kasutatakse tingimuste kirjeldamisel, ning mis annab positiivse vastuse "true" juhul kui
+            //       Mõlemal pool märki "&&" olevad tingimused omakorda annavad oma avaldise tulemusena "true"
+            //       või teisisõnu: true + true = true
+            //  || ->  "or"  loogiline tehe, mida kasutatakse tingimuste kirjeldamisel, ning mis annab positiivse vastuse "true" juhul kui
+            //       Mõlemal pool märki "||" olev tingimus annab oma avaldise tulemusena "true", ei ole vahet milliselt pool märki
+            //       või teisisõnu: true + false = true
+            // CTRL + D = Dublicate
+            // ! -> "NOT" loogiline tehe, mida kasutatakse tingimuse avaldise tulemuse inverteerimiseks. Tulemus mis muidu tagastaks "true", hüüumärgi abil nüüd tagastab false, ja vastupidi - tulemus mis muidu tagastaks "false", nüüd tagastab "true".
+            // Ehk teisisõnu: true = false / false = true   
 
         }
     }
