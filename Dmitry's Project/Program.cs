@@ -459,6 +459,49 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
 
             // Suuremast väiksemasse teisendus kaotab andmeresolutsiooni,
             // kaotatud andmeid ei saa tagasi suuremasse andmetüüpi castimisega tagasi
+
+            // Parsimine on tektstis katse teisendada mingit tüüpi arvandmeid. Teisendus toimub küsides mingist andmetüübist talle sisseehitatud
+            // meetodi "Parse()" abil mingist sõnest arvandmeid.
+            string seeOnTekst = "1";                                //Mingisugune sõne mis omab endas potentsialselt mingit arvulist väärtus
+            int teisendatud = int.Parse(seeOnTekst);                // muutuja "teisendatud" kuhu omistatakse "Parse()" meetodi abil sõnest arvväärtus
+            Console.WriteLine(teisendatud);                         //teisenduse väljakuvamine
+
+            // Parsimisel on olemas ka alternatiivne meetod "TryParse()". TryParse üritab teisendada, ning kui teisendus kukub läbi, tagastatakse
+            // algne väärtus/false
+            
+            string seeOnTekst2 = "2";                                           //Mingisugune sõne mis omab endas potentsialselt mingit arvulist väärtus
+            Console.WriteLine(int.TryParse(seeOnTekst2, out int result));       //teisenduse väljakuvamine
+
+            //Konverteerimine on mingisuguse andme otsene teisendus ükskõik millisesse teise andmetüübi. Selle jaoks on olemas moodul "Convert".
+            //Convert moodulis on sarnaselt arvandmetüüpides olevale ToString() meetodile ka muude andmetüüpide vastavad konverteerimismeetodid.
+            var mingiInfo = "6.7";                               //On olemas mingisugune teisendamist vajav info
+            string mingiInfoTekst = Convert.ToString(mingiInfo); //Convert.ToString() teisendab tundmatust andmetüübist info stringiks/sõneks
+            char mingiInfoChar; = Convert.ToChar(mingiInfo)      //teisendus täheks
+            int mingiInfoInt; = Convert.ToInt32(mingiInfo)       //teisendus int andmetüübi
+            long mingiInfoLong; = Convert.ToInt64(mingiInfo)     //teisendus long andmetüübi
+            decimal mingiInfoDecimal; = Convert.ToDecimal(mingiInfo)    //teisendus decimaliks
+            double mingiInfoDouble; = Convert.ToDouble(mingiInfo)   //teisendus double andmetüübi
+            byte mingiInfoByte; = Convert.ToByte(mingiInfo)      //teisendus baidiks
+            bool mingiInfoBool; = Convert.ToBoolean(mingiInfo)//teisendus boolean andmetüübi
+
+
+
+            //int suunakood = 0;
+            //Console.WriteLine("Palun sisesta oma suunakood");
+            //suunakood = int.Parse(Console.ReadLine());
+            //if (suunakood > 9999 && suunakood < 100000)
+            //{
+            //    Console.WriteLine("Ahha nüüd teasin kus sa elad");
+            //}
+            //else if (suunakood <= 9999)
+            //{
+            //    Console.WriteLine("Üks täht on puudu");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Üks täht on üle");
+            //}
+
         }
     }
 }
