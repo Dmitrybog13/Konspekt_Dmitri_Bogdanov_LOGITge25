@@ -568,6 +568,8 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                            //ehk tingimuse avaldise tulemus on "true" täidetakse veel üks ring, ning kontrollitakse
                                            //tingimust uuesti. antud juhul tsükkel toimib niikaua, kuni tsüklimuutuja ei ole 5, ta saab
                                            //olla 4, ja 6 ja ükskõik mis muu, aga mitte 5.
+
+
         }
     }
 }
