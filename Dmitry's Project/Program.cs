@@ -294,18 +294,23 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             int vennapikkus = 0;
             int emapikkus = 0;
             int isapikkus = 0;
-            Console.WriteLine("mis sinu pikkus sentimeetrites?: ");
-            kasutajapikkus = int.Parse(Console.ReadLine());
-            Console.WriteLine("mis sinu venna pikkus sentimeetrites?: ");
-            vennapikkus = int.Parse(Console.ReadLine());
-            Console.WriteLine("mis sinu ema pikkus sentimeetrites?: ");
-            emapikkus = int.Parse(Console.ReadLine());
-            Console.WriteLine("mis sinu isa pikkus sentimeetrites?: ");
-            isapikkus = int.Parse(Console.ReadLine());
-            float perekeskmine = (float)(kasutajapikkus+emapikkus+vennapikkus+isapikkus)/4)/100;
-            float lastekeskmine = (float)(kasutajapikkus+vennapikkus)/2)/100;
-            float vanematekeskmine = (float)(emapikkus+isapikkus)/2)/100;
-            float vahe = 0
+            List<int> vanused = new List<int>();
+            List<string> isikud = new List<string>() { "sinu", "oma venna", "oma isa," "oma ema" };
+            int i = 0;
+            do
+            {
+                Console.WriteLine("sisesta "+isikud.ElementAt(i)+" pikkus sentimeetrites");
+                //kuvame kasutajale teate, koos isikuga mida adresseritakse tsüklimuutuja abil järjendist "isikud"
+                vanused.Add(int.Parse(Console.ReadLine()));
+                //.Add on listi meetod elemendi lisamiseks, lisatakse otse parsitud täisarv käsurea pealt
+                i++;
+                // suurendame i-d ühe võrra
+            } while (i < isikud.Count);
+
+            float perekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAta/4)/100;
+            float lastekeskmine = ((float)(kasutajapikkus+vennapikkus)/2)/100;
+            float vanematekeskmine = ((float)(emapikkus+isapikkus)/2)/100;
+            float vahe = 0;
             if (vanematekeskmine > lastekeskmine)
             {
                 vahe = vanematekeskmine - lastekeskmine;
@@ -314,11 +319,11 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             {
                 vahe = lastekeskmine - vanematekeskmine;  
             }
-            Console.WriteLine("perekeskmine on "+Math.Round(perekeskmine,2)+"m. vanematekeskmine on "+ Math.Round(vanematekeskmine,2) + "m. \nlastekeskmine on " + Math.Round(lastekeskmine,2) +"m. kahe keskmise vahe on " +Math.Round(vahe + "m. ");
+            Console.WriteLine("perekeskmine on "+Math.Round(perekeskmine,2)+"m. vanematekeskmine on "+ Math.Round(vanematekeskmine,2) + "m. \nlastekeskmine on " + Math.Round(lastekeskmine,2) +"m. kahe keskmise vahe on " +Math.Round(vahe, 2) + "m.");
             ///*
             //    üleval harjutused
 
-            //    https://meet.google.com/qjt-wofj-gdb
+            //    /*https://meet.google.com/qjt-wofj-gdb*/
 
             //    all teooria
             //*/
