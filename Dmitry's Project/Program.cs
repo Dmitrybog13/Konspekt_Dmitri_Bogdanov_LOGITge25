@@ -302,9 +302,9 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             emapikkus = int.Parse(Console.ReadLine());
             Console.WriteLine("mis sinu isa pikkus sentimeetrites?: ");
             isapikkus = int.Parse(Console.ReadLine());
-            float perekeskmine = ((kasutajapikkus+emapikkus+vennapikkus+isapikkus)/4)/100;
-            float lastekeskmine = ((kasutajapikkus+vennapikkus)/2)/100;
-            float vanematekeskmine = ((emapikkus+isapikkus)/2)/100;
+            float perekeskmine = (float)(kasutajapikkus+emapikkus+vennapikkus+isapikkus)/4)/100;
+            float lastekeskmine = (float)(kasutajapikkus+vennapikkus)/2)/100;
+            float vanematekeskmine = (float)(emapikkus+isapikkus)/2)/100;
             float vahe = 0
             if (vanematekeskmine > lastekeskmine)
             {
@@ -314,7 +314,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             {
                 vahe = lastekeskmine - vanematekeskmine;  
             }
-            Console.WriteLine("perekeskmine on " +perekeskmine+ "m. vanematekeskmine on " +vanematekeskmine+ "m. \nlastekeskmine on " + lastekeskmine + "m. kahe keskmise vahe on " + vahe + "m. ");
+            Console.WriteLine("perekeskmine on "+Math.Round(perekeskmine,2)+"m. vanematekeskmine on "+ Math.Round(vanematekeskmine,2) + "m. \nlastekeskmine on " + Math.Round(lastekeskmine,2) +"m. kahe keskmise vahe on " +Math.Round(vahe + "m. ");
             ///*
             //    üleval harjutused
 
