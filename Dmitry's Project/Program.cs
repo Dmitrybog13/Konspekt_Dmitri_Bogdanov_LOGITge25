@@ -1,4 +1,5 @@
-﻿using System; //<-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
+﻿using System;
+using System.Net.Http.Headers; //<-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
 //süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. Teised projektid viidatakse tavaliselt solution (.sln)
 //failist.
 
@@ -283,8 +284,37 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //{
             //    Console.WriteLine("Tehtetüüp pole valitud, tehet ei sooritata.");
             //}
-
-
+            /* näiteülesanne 8 */
+            //Kirjuta programm mis
+            //Küsib kasutajatelt pikkus *sentimeetrites*
+            //küsib tema teiste perekonnaliikmete pikkus (ema isa vend)
+            // programm arvutab välja perekonna keskmise pikkuse, vanemate keskmise pikkuse, laste keskmise pikkuse ja kahe keskmise vahe,
+            // kõik arvud peab programm esitama komakohtadega arvudena
+            int kasutajapikkus = 0;
+            int vennapikkus = 0;
+            int emapikkus = 0;
+            int isapikkus = 0;
+            Console.WriteLine("mis sinu pikkus sentimeetrites?: ");
+            kasutajapikkus = int.Parse(Console.ReadLine());
+            Console.WriteLine("mis sinu venna pikkus sentimeetrites?: ");
+            vennapikkus = int.Parse(Console.ReadLine());
+            Console.WriteLine("mis sinu ema pikkus sentimeetrites?: ");
+            emapikkus = int.Parse(Console.ReadLine());
+            Console.WriteLine("mis sinu isa pikkus sentimeetrites?: ");
+            isapikkus = int.Parse(Console.ReadLine());
+            float perekeskmine = ((kasutajapikkus+emapikkus+vennapikkus+isapikkus)/4)/100;
+            float lastekeskmine = ((kasutajapikkus+vennapikkus)/2)/100;
+            float vanematekeskmine = ((emapikkus+isapikkus)/2)/100;
+            float vahe = 0
+            if (vanematekeskmine > lastekeskmine)
+            {
+                vahe = vanematekeskmine - lastekeskmine;
+            }
+            else
+            {
+                vahe = lastekeskmine - vanematekeskmine;  
+            }
+            Console.WriteLine("perekeskmine on " +perekeskmine+ "m. vanematekeskmine on " +vanematekeskmine+ "m. \nlastekeskmine on " + lastekeskmine + "m. kahe keskmise vahe on " + vahe + "m. ");
             ///*
             //    üleval harjutused
 
@@ -462,27 +492,27 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
 
             // Parsimine on tektstis katse teisendada mingit tüüpi arvandmeid. Teisendus toimub küsides mingist andmetüübist talle sisseehitatud
             // meetodi "Parse()" abil mingist sõnest arvandmeid.
-            string seeOnTekst = "1";                                //Mingisugune sõne mis omab endas potentsialselt mingit arvulist väärtus
-            int teisendatud = int.Parse(seeOnTekst);                // muutuja "teisendatud" kuhu omistatakse "Parse()" meetodi abil sõnest arvväärtus
-            Console.WriteLine(teisendatud);                         //teisenduse väljakuvamine
+            //string seeOnTekst = "1";                                //Mingisugune sõne mis omab endas potentsialselt mingit arvulist väärtus
+            //int teisendatud = int.Parse(seeOnTekst);                // muutuja "teisendatud" kuhu omistatakse "Parse()" meetodi abil sõnest arvväärtus
+            //Console.WriteLine(teisendatud);                         //teisenduse väljakuvamine
 
-            // Parsimisel on olemas ka alternatiivne meetod "TryParse()". TryParse üritab teisendada, ning kui teisendus kukub läbi, tagastatakse
-            // algne väärtus/false
+            //// Parsimisel on olemas ka alternatiivne meetod "TryParse()". TryParse üritab teisendada, ning kui teisendus kukub läbi, tagastatakse
+            //// algne väärtus/false
             
-            string seeOnTekst2 = "2";                                           //Mingisugune sõne mis omab endas potentsialselt mingit arvulist väärtus
-            Console.WriteLine(int.TryParse(seeOnTekst2, out int result));       //teisenduse väljakuvamine
+            //string seeOnTekst2 = "2";                                           //Mingisugune sõne mis omab endas potentsialselt mingit arvulist väärtus
+            //Console.WriteLine(int.TryParse(seeOnTekst2, out int result));       //teisenduse väljakuvamine
 
-            //Konverteerimine on mingisuguse andme otsene teisendus ükskõik millisesse teise andmetüübi. Selle jaoks on olemas moodul "Convert".
-            //Convert moodulis on sarnaselt arvandmetüüpides olevale ToString() meetodile ka muude andmetüüpide vastavad konverteerimismeetodid.
-            var mingiInfo = "6.7";                               //On olemas mingisugune teisendamist vajav info
-            string mingiInfoTekst = Convert.ToString(mingiInfo); //Convert.ToString() teisendab tundmatust andmetüübist info stringiks/sõneks
-            char mingiInfoChar; = Convert.ToChar(mingiInfo)      //teisendus täheks
-            int mingiInfoInt; = Convert.ToInt32(mingiInfo)       //teisendus int andmetüübi
-            long mingiInfoLong; = Convert.ToInt64(mingiInfo)     //teisendus long andmetüübi
-            decimal mingiInfoDecimal; = Convert.ToDecimal(mingiInfo)    //teisendus decimaliks
-            double mingiInfoDouble; = Convert.ToDouble(mingiInfo)   //teisendus double andmetüübi
-            byte mingiInfoByte; = Convert.ToByte(mingiInfo)      //teisendus baidiks
-            bool mingiInfoBool; = Convert.ToBoolean(mingiInfo)//teisendus boolean andmetüübi
+            ////Konverteerimine on mingisuguse andme otsene teisendus ükskõik millisesse teise andmetüübi. Selle jaoks on olemas moodul "Convert".
+            ////Convert moodulis on sarnaselt arvandmetüüpides olevale ToString() meetodile ka muude andmetüüpide vastavad konverteerimismeetodid.
+            //var mingiInfo = "6.7";                               //On olemas mingisugune teisendamist vajav info
+            //string mingiInfoTekst = Convert.ToString(mingiInfo); //Convert.ToString() teisendab tundmatust andmetüübist info stringiks/sõneks
+            //char mingiInfoChar; = Convert.ToChar(mingiInfo)      //teisendus täheks
+            //int mingiInfoInt; = Convert.ToInt32(mingiInfo)       //teisendus int andmetüübi
+            //long mingiInfoLong; = Convert.ToInt64(mingiInfo)     //teisendus long andmetüübi
+            //decimal mingiInfoDecimal; = Convert.ToDecimal(mingiInfo)    //teisendus decimaliks
+            //double mingiInfoDouble; = Convert.ToDouble(mingiInfo)   //teisendus double andmetüübi
+            //byte mingiInfoByte; = Convert.ToByte(mingiInfo)      //teisendus baidiks
+            //bool mingiInfoBool; = Convert.ToBoolean(mingiInfo)//teisendus boolean andmetüübi
 
 
 
