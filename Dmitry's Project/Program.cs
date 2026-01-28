@@ -316,44 +316,44 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //Console.WriteLine("perekeskmine on "+Math.Round(perekeskmine,2)+"m. vanematekeskmine on "+Math.Round(vanematekeskmine,2)+"m.\nlastekeksmine on "+Math.Round(lastekeskmine,2)+"m. kahe keskmise vahe on "+Math.Round(vahe,2)+"m.");
 
 
-            List<int> vanused = new List<int>();
-            List<string> isikud = new List<string>() {"sinu", "oma venna", "oma isa", "oma ema"};
-            int i = 0;
-            do
-            {
-                Console.WriteLine("Sisesta "+isikud.ElementAt(i)+" pikkus sentimeetrites");
-                //kuvame kasutajale teate, koos isikuga mida adresseeritakse tsüklimuutuja abil järjendist "isikud"
-                vanused.Add(int.Parse(Console.ReadLine()));
-                //.Add on listi meetod elemendi lisamiseks, lisatakse otse parsitud täisarv käsurea pealt
-                i++;
-                // suurendame i-d ühe võrra
-            } while (i < isikud.Count);
+            //List<int> vanused = new List<int>();
+            //List<string> isikud = new List<string>() {"sinu", "oma venna", "oma isa", "oma ema"};
+            //int i = 0;
+            //do
+            //{
+            //    Console.WriteLine("Sisesta "+isikud.ElementAt(i)+" pikkus sentimeetrites");
+            //    //kuvame kasutajale teate, koos isikuga mida adresseeritakse tsüklimuutuja abil järjendist "isikud"
+            //    vanused.Add(int.Parse(Console.ReadLine()));
+            //    //.Add on listi meetod elemendi lisamiseks, lisatakse otse parsitud täisarv käsurea pealt
+            //    i++;
+            //    // suurendame i-d ühe võrra
+            //} while (i < isikud.Count);
 
-            float perekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(3) + vanused.ElementAt(1) + vanused.ElementAt(2)) / 4) / 100;
-            float lastekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(1)) / 2) / 100;
-            float vanematekeskmine = ((float)(vanused.ElementAt(3) + vanused.ElementAt(2)) / 2) / 100;
-            float vahe = 0;
-            if (vanematekeskmine > lastekeskmine)
-            {
-                vahe = vanematekeskmine - lastekeskmine;
-            }
-            else
-            {
-                vahe = lastekeskmine - vanematekeskmine;
-            }
-            Console.WriteLine("perekeskmine on " + Math.Round(perekeskmine, 2) + "m. vanematekeskmine on " + Math.Round(vanematekeskmine, 2) + "m.\nlastekeksmine on " + Math.Round(lastekeskmine, 2) + "m. kahe keskmise vahe on " + Math.Round(vahe, 2) + "m.");
+            //float perekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(3) + vanused.ElementAt(1) + vanused.ElementAt(2)) / 4) / 100;
+            //float lastekeskmine = ((float)(vanused.ElementAt(0) + vanused.ElementAt(1)) / 2) / 100;
+            //float vanematekeskmine = ((float)(vanused.ElementAt(3) + vanused.ElementAt(2)) / 2) / 100;
+            //float vahe = 0;
+            //if (vanematekeskmine > lastekeskmine)
+            //{
+            //    vahe = vanematekeskmine - lastekeskmine;
+            //}
+            //else
+            //{
+            //    vahe = lastekeskmine - vanematekeskmine;
+            //}
+            //Console.WriteLine("perekeskmine on " + Math.Round(perekeskmine, 2) + "m. vanematekeskmine on " + Math.Round(vanematekeskmine, 2) + "m.\nlastekeksmine on " + Math.Round(lastekeskmine, 2) + "m. kahe keskmise vahe on " + Math.Round(vahe, 2) + "m.");
 
             /*
                 üleval harjutused
 
-                https://meet.google.com/qjt-wofj-gdb
+                //https://meet.google.com/qjt-wofj-gdb
 
                 all teooria
             */
             ///*   -= S Ü N T A K S =-                             */
-            Console.WriteLine("'Ommik"); //<- "1"
-            string vastus = Console.ReadLine(); //<- "2"
-            Console.WriteLine("C:");
+            //Console.WriteLine("'Ommik"); //<- "1"
+            //string vastus = Console.ReadLine(); //<- "2"
+            //Console.WriteLine("C:");
             // ;         - Iga koodilause koodiploki sees lõppeb lauselõpumärgiga
             // Console   - Console on windowsi süsteemi/C# käsurea adresseerimise pakett, millega saab erinevasid käsurea operatsioone teha
             // .         - Kasutatakse adresseerimiseks et saada punktile eelnevast objektist mingisugune meetod funktsioon, mis kirjutatakse
@@ -387,13 +387,13 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //string sõne = "abc"; //is gud
 
             // 1      2   3   4  5
-            string näidis = "def"; // 1 - Muutuja kirjutatakse alustades andmetüübist, ilma andmetüübita ei saa C# muutujat deklareerida
-                                   // 2 - Seejärel kirjutatakse muutuja nimi mis väljendab andmed ja nende andmete eesmärki nimisõnana
-                                   //     soovitatavalt kasutada muutujate nimetamisel camelCase stiili. esimene täht on väike, ülejäänud
-                                   //     sõnad muutuja nimes algavad suure tähega.
-                                   // 3 - omistusoperaator mis annab muutujale andmed sisse
-                                   // 4 - andmed mida omistatakse
-                                   // 5 - lauselõpumärk
+            //string näidis = "def"; // 1 - Muutuja kirjutatakse alustades andmetüübist, ilma andmetüübita ei saa C# muutujat deklareerida
+            //                       // 2 - Seejärel kirjutatakse muutuja nimi mis väljendab andmed ja nende andmete eesmärki nimisõnana
+            //                       //     soovitatavalt kasutada muutujate nimetamisel camelCase stiili. esimene täht on väike, ülejäänud
+            //                       //     sõnad muutuja nimes algavad suure tähega.
+            //                       // 3 - omistusoperaator mis annab muutujale andmed sisse
+            //                       // 4 - andmed mida omistatakse
+            //                       // 5 - lauselõpumärk
 
             /*   -= K A I T S T U D   S Õ N A D =-                  */
             //
@@ -413,24 +413,24 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             // throw        true        try         typeof      uint        ulong       unchecked   
             // unsafe       ushort      using       virtual     void        volatile    while
 
-            /*   -= O M I S T U S O P E R A A T O R I D =-          */
-            // =    -> üksik võrdusmärk omistab muutja sisse väärtuse, mida adresseeritakse muutuja enda nimega
-            int muutuja = 1;
-            // +=   -> võrdusmärk mille ees on pluss, automaatselt liidab muutujale otsa võrdusmärgi teisel pool oleva väärtuse
-            muutuja += 2;
-            // -=   -> võrdusmärk mille ees on miinus, automaatselt lahutab muutujas olevast väärtusest võrdusmärgi teisel pool oleva väärtuse
-            muutuja -= 1;
-            // *=   -> võrdusmärk mille ees on korrutusmärk, automaatselt korrutab muutuja sisu võrdusmärgi teisel pool oleva väärtuse kordi
-            muutuja *= 3;
-            // /=   -> võrdusmärk mille ees on jagamismärk, automaatselt jagab muutuja sisu võrdusmärgi teisel pool oleva väärtuse osadeks
-            muutuja /= 4;
-            // %=   -> võrdusmärk mille ees on modulus, automaatselt jätab muutujasse jäägi.
-            muutuja %= 2;
+            ///*   -= O M I S T U S O P E R A A T O R I D =-          */
+            //// =    -> üksik võrdusmärk omistab muutja sisse väärtuse, mida adresseeritakse muutuja enda nimega
+            //int muutuja = 1;
+            //// +=   -> võrdusmärk mille ees on pluss, automaatselt liidab muutujale otsa võrdusmärgi teisel pool oleva väärtuse
+            //muutuja += 2;
+            //// -=   -> võrdusmärk mille ees on miinus, automaatselt lahutab muutujas olevast väärtusest võrdusmärgi teisel pool oleva väärtuse
+            //muutuja -= 1;
+            //// *=   -> võrdusmärk mille ees on korrutusmärk, automaatselt korrutab muutuja sisu võrdusmärgi teisel pool oleva väärtuse kordi
+            //muutuja *= 3;
+            //// /=   -> võrdusmärk mille ees on jagamismärk, automaatselt jagab muutuja sisu võrdusmärgi teisel pool oleva väärtuse osadeks
+            //muutuja /= 4;
+            //// %=   -> võrdusmärk mille ees on modulus, automaatselt jätab muutujasse jäägi.
+            //muutuja %= 2;
 
-            // ++   -> on kiirtehe, mis muutujale liidab ainult ühe juurde.
-            muutuja++;
-            // --   -> on kiirtehe, mis muutujast lahutab ainult ühe maha.
-            muutuja--;
+            //// ++   -> on kiirtehe, mis muutujale liidab ainult ühe juurde.
+            //muutuja++;
+            //// --   -> on kiirtehe, mis muutujast lahutab ainult ühe maha.
+            //muutuja--;
 
             /*   -= V Õ R D L U S O P E R A A T O R I D =-          */
             // ==   ->  "on võrdne/on täpselt sama" - Võrdusmärkide ühel pool olev objekt peab vastama
@@ -455,43 +455,43 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //          hüüumärgi abil nüüd tagastab false, ja vastupidi - tulemus mis muidu tagastaks "false", nüüd tagastab "true".
             //          ehk teisisõnu: true = false / false = true
 
-            /*   -= T I N G I M U S L A U S E =-                   */
-            if (true)       //  Kaitstud sõna "if" kutsub esile tingimuslause, mille tingimuse avaldis on sellele järgnevate () sulgude vahel.
-            {               //  Järgneb {} loogeliste sulgude vahel koodiplokk, mis teostatakse siis, kui tingimuse avaldis annab tulemusena "true",
-                            //  "false" tulemuse puhul jäetakse kood vahele
-            }
-            else if (true)  //  Kaitstud sõnad "else" ja "if" (koos "else if") kutsuvad esile sekundaarse tingimuslause, mille tingimus on samamoodi
-                            //  sellele järgnevate sulgude vahel, ning millele peab alati eelnema kas "if" või teine "else if". Else if tingimust
-                            //  kontrollitakse ainult siis, kui sellele eelnev tingimus tagastab avaldise tulemusena "false".
-            {               //  Järgneb {} loogeliste sulgude vahel koodiplokk, mis teostatakse siis, kui else if tingimuslause avaldis annab tulemusena "true",
-                            //  "false" tulemuse puhul jäetakse kood vahele ning minnakse edasi järgneva tingimuse või teostatava koodi juurde.
-            }
-            else            //  Kaitstud sõna "else" kutsub esile järeltingimuslause, millele peab eelnema alati kas "if" või "else if" tingimuslause, ning
-            {               //  mille koodiploki sisu täidetakse ilma oma tingimuse avaldise kontrollita (ei oma avaldist) kuna else koodiplokk teostatakse
-                            //  kõikide teiste tingimuste läbikukkumisel (kõik eelnevad tagastavad tulemusena "false")
-            }
-            /*   -= T I N G I M U S L A U S E - SWITCHCASE =-       */
-            int option = 3; // -------
-            switch (option) // "switch" on kaitstud sõna alternatiivse tingimuskontrolli jaoks mida saab if-elseif-else asemel kasutada. Sulgude vahele
-                            // käib muutuja nimi, mille põhjal tingiomuslik ümberlülitus toimub. Siin sulgude vahel ei ole tingimus ise, vaid kõigest
-                            // kontrollitav muutuja, või omakorda sulgude vahel muu tingimuse avaldis. Pärast lülitusvalikut tuleb koodiplokk {}
-            {
-                case 1:     // Koodiploki sees on erinevad juhtumid või vasted väärtuste korral mis võivad olla lülitusvalikus oleva muutuja sees.
-                            // Iga juhtum/vaste kirjutatakse kaitstud sõnaga "case" ning  väärtus selle järel millele see juhtum vastab. Antud juhul
-                            // see juhtum toimib, kui muutujas "option" on täisarv 1. Peale võimalikku väärtust on koolon väljendades juhtumi täitumisel
-                            // tehtavat programmikoodi.
-                    Console.WriteLine("Nope"); // Antud juhul kuvatakse juhtumi 1 puhul kasutajale sõnum.
-                    break;
-                case 2:     // Juhtumeid võib olla mitmeid, antud juhul on siin näidises neid 3+1 (3 kindlat väärtust ja üks vaikeväärtus)
-                    break;
-                case 3:
-                    Console.WriteLine(option); // Antud juhul kuvatakse juhtumi 3 puhul kasutajale muutujas "option" asuv väärtus välja
-                    break;
-                default:    // Default juhtum täitub siis, kui ülejäänud kirjeldatud juhtumid ei kata switchi lülitusvalikus olevas muutujas
-                            // asuvat väärtust. Toimib nagu else, kuid erinevalt if-elseif-else struktuurist võib default olla ka alguses.
-                    break;  // Kui antud juhtumi tegevus on tehtud, väljutakse mitte ainult juhtumist, vaid ka kogu käesolevast switch-case
-                            // tingimustikust. Peale breaki on lauselõpumärk.
-            }
+            ///*   -= T I N G I M U S L A U S E =-                   */
+            //if (true)       //  Kaitstud sõna "if" kutsub esile tingimuslause, mille tingimuse avaldis on sellele järgnevate () sulgude vahel.
+            //{               //  Järgneb {} loogeliste sulgude vahel koodiplokk, mis teostatakse siis, kui tingimuse avaldis annab tulemusena "true",
+            //                //  "false" tulemuse puhul jäetakse kood vahele
+            //}
+            //else if (true)  //  Kaitstud sõnad "else" ja "if" (koos "else if") kutsuvad esile sekundaarse tingimuslause, mille tingimus on samamoodi
+            //                //  sellele järgnevate sulgude vahel, ning millele peab alati eelnema kas "if" või teine "else if". Else if tingimust
+            //                //  kontrollitakse ainult siis, kui sellele eelnev tingimus tagastab avaldise tulemusena "false".
+            //{               //  Järgneb {} loogeliste sulgude vahel koodiplokk, mis teostatakse siis, kui else if tingimuslause avaldis annab tulemusena "true",
+            //                //  "false" tulemuse puhul jäetakse kood vahele ning minnakse edasi järgneva tingimuse või teostatava koodi juurde.
+            //}
+            //else            //  Kaitstud sõna "else" kutsub esile järeltingimuslause, millele peab eelnema alati kas "if" või "else if" tingimuslause, ning
+            //{               //  mille koodiploki sisu täidetakse ilma oma tingimuse avaldise kontrollita (ei oma avaldist) kuna else koodiplokk teostatakse
+            //                //  kõikide teiste tingimuste läbikukkumisel (kõik eelnevad tagastavad tulemusena "false")
+            //}
+            ///*   -= T I N G I M U S L A U S E - SWITCHCASE =-       */
+            //int option = 3; // -------
+            //switch (option) // "switch" on kaitstud sõna alternatiivse tingimuskontrolli jaoks mida saab if-elseif-else asemel kasutada. Sulgude vahele
+            //                // käib muutuja nimi, mille põhjal tingiomuslik ümberlülitus toimub. Siin sulgude vahel ei ole tingimus ise, vaid kõigest
+            //                // kontrollitav muutuja, või omakorda sulgude vahel muu tingimuse avaldis. Pärast lülitusvalikut tuleb koodiplokk {}
+            //{
+            //    case 1:     // Koodiploki sees on erinevad juhtumid või vasted väärtuste korral mis võivad olla lülitusvalikus oleva muutuja sees.
+            //                // Iga juhtum/vaste kirjutatakse kaitstud sõnaga "case" ning  väärtus selle järel millele see juhtum vastab. Antud juhul
+            //                // see juhtum toimib, kui muutujas "option" on täisarv 1. Peale võimalikku väärtust on koolon väljendades juhtumi täitumisel
+            //                // tehtavat programmikoodi.
+            //        Console.WriteLine("Nope"); // Antud juhul kuvatakse juhtumi 1 puhul kasutajale sõnum.
+            //        break;
+            //    case 2:     // Juhtumeid võib olla mitmeid, antud juhul on siin näidises neid 3+1 (3 kindlat väärtust ja üks vaikeväärtus)
+            //        break;
+            //    case 3:
+            //        Console.WriteLine(option); // Antud juhul kuvatakse juhtumi 3 puhul kasutajale muutujas "option" asuv väärtus välja
+            //        break;
+            //    default:    // Default juhtum täitub siis, kui ülejäänud kirjeldatud juhtumid ei kata switchi lülitusvalikus olevas muutujas
+            //                // asuvat väärtust. Toimib nagu else, kuid erinevalt if-elseif-else struktuurist võib default olla ka alguses.
+            //        break;  // Kui antud juhtumi tegevus on tehtud, väljutakse mitte ainult juhtumist, vaid ka kogu käesolevast switch-case
+            //                // tingimustikust. Peale breaki on lauselõpumärk.
+            //}
 
 
             /*   -= T E I S E N D A M I N E / C A S T I M I N E =-  */
@@ -502,44 +502,44 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //Manuaalne castimine toimub siis, kui teisendatakse suuremast andmetüübist väiksemasse, sellisel juhul on vaja suurema andmetüübiga
             //muutuja ette, asetada sulupaar kus on soovitav andmetüüp sees.
 
-            // Manuaalne castimine (Explicit)
-            double newData2 = 1.23d; //tekitatakse, või on olemas doubletüüpi andmed muutujas newData2
-            float newFloat2 = (float)newData2; //Toimub teisendus väiksemasse float andmetüüpi, double andmetüübist.
-            long newLong2 = (long)newFloat2; //Toimub teisendus väiksemasse long andmetüüpi, float andmetüübist.
-            int newInt2 = (int)newLong2; //Toimub teisendus väiksemasse int andmetüüpi, long andmetüübist.
-            char newChar2 = (char)newInt2; //Toimub teisendus väiksemasse char andmetüüpi, int andmetüübist.
+            //// Manuaalne castimine (Explicit)
+            //double newData2 = 1.23d; //tekitatakse, või on olemas doubletüüpi andmed muutujas newData2
+            //float newFloat2 = (float)newData2; //Toimub teisendus väiksemasse float andmetüüpi, double andmetüübist.
+            //long newLong2 = (long)newFloat2; //Toimub teisendus väiksemasse long andmetüüpi, float andmetüübist.
+            //int newInt2 = (int)newLong2; //Toimub teisendus väiksemasse int andmetüüpi, long andmetüübist.
+            //char newChar2 = (char)newInt2; //Toimub teisendus väiksemasse char andmetüüpi, int andmetüübist.
 
-            //Autmaatne castimine (Implicit)
-            int backToInt2 = newChar2; //Toimub automaatne teisendus char andmetüübist int andmetüüpi.
-            long backToLong2 = backToInt2; //Toimub automaatne teisendus int andmetüübist long andmetüüpi.
-            float backToFloat2 = backToLong2; //Toimub automaatne teisendus long andmetüübist float andmetüüpi.
-            double backToDouble2 = backToFloat2;  //Toimub automaatne teisendus float andmetüübist double andmetüüpi.
+            ////Autmaatne castimine (Implicit)
+            //int backToInt2 = newChar2; //Toimub automaatne teisendus char andmetüübist int andmetüüpi.
+            //long backToLong2 = backToInt2; //Toimub automaatne teisendus int andmetüübist long andmetüüpi.
+            //float backToFloat2 = backToLong2; //Toimub automaatne teisendus long andmetüübist float andmetüüpi.
+            //double backToDouble2 = backToFloat2;  //Toimub automaatne teisendus float andmetüübist double andmetüüpi.
 
-            // Suuremast väiksemasse teisendus kaotab andmeresolutsiooni,
-            // kaotatud andmeid ei saa tagasi suuremasse andmetüüpi castimisega tagasi
+            //// Suuremast väiksemasse teisendus kaotab andmeresolutsiooni,
+            //// kaotatud andmeid ei saa tagasi suuremasse andmetüüpi castimisega tagasi
 
-            // Parsimine on tekstist katse teisendada mingit tüüpi arvandmeid. Teisendus toimub küsides mingist andmetüübist talle sisseehitatud
-            // meetodi "Parse()" abil mingist sõnest arvandmeid.
-            string seeOnTekst = "1";                    //Mingisugune sõne mis omab endas potensiaalselt mingit arvulist väärtust
-            int teisendatud = int.Parse(seeOnTekst);    //muutuja "teisendatud" kuhu omistatakse "Parse()" meetodi abil sõnest arvväärtus
-            Console.WriteLine(teisendatud);             //teisenduse väljakuvamine
+            //// Parsimine on tekstist katse teisendada mingit tüüpi arvandmeid. Teisendus toimub küsides mingist andmetüübist talle sisseehitatud
+            //// meetodi "Parse()" abil mingist sõnest arvandmeid.
+            //string seeOnTekst = "1";                    //Mingisugune sõne mis omab endas potensiaalselt mingit arvulist väärtust
+            //int teisendatud = int.Parse(seeOnTekst);    //muutuja "teisendatud" kuhu omistatakse "Parse()" meetodi abil sõnest arvväärtus
+            //Console.WriteLine(teisendatud);             //teisenduse väljakuvamine
 
-            // Parsimisel on olemas ka alternatiivne meetod "TryParse()". TryParse üritab teisendada, ning kui teisendus kukub läbi, tagastatakse
-            // algne väärtus/false
-            string seeOnTekst2 = "2";                                       //Mingisugune sõne mis omab endas potensiaalselt mingit arvulist väärtust
-            Console.WriteLine(int.TryParse(seeOnTekst2, out int result));   //teisenduse tulemuse väljakuvamine
+            //// Parsimisel on olemas ka alternatiivne meetod "TryParse()". TryParse üritab teisendada, ning kui teisendus kukub läbi, tagastatakse
+            //// algne väärtus/false
+            //string seeOnTekst2 = "2";                                       //Mingisugune sõne mis omab endas potensiaalselt mingit arvulist väärtust
+            //Console.WriteLine(int.TryParse(seeOnTekst2, out int result));   //teisenduse tulemuse väljakuvamine
 
-            //Konverteerimine on mingisuguse andme otsene teisendus ükskõik millisesse teise andmetüüpi. Selle jaoks on olemas moodul "Convert".
-            //Convert moodulis on sarnaselt arvandmetüüpoides olevale ToString() meetodile ka muude andmetüüpide vastavad konverteerimismeetodid.
-            var mingiInfo = "6.7";                                  //On olemas mingisugune teisendamist vajav info
-            string mingiInfoTekst = Convert.ToString(mingiInfo);    //Convert.ToString() teisendab tundmatust andmetüübist info stringiks/sõneks
-            char mingiInfoChar = Convert.ToChar(mingiInfo);         //teisendus täheks
-            int mingiInfoInt = Convert.ToInt32(mingiInfo);          //teisendus int andmetüüpi
-            long mingiInfoLong = Convert.ToInt64(mingiInfo);        //teisendus long andmetüüpi 
-            decimal mingiInfoDecimal = Convert.ToDecimal(mingiInfo);//teisendus decimaliks
-            double mingiInfoDouble = Convert.ToDouble(mingiInfo);   //teisendus double andmetüüpi
-            byte mingiInfoByte = Convert.ToByte(mingiInfo);         //teisendus baidiks
-            bool mingiInfoBool = Convert.ToBoolean(mingiInfo);      //teisendus boolean andmetüüpi
+            ////Konverteerimine on mingisuguse andme otsene teisendus ükskõik millisesse teise andmetüüpi. Selle jaoks on olemas moodul "Convert".
+            ////Convert moodulis on sarnaselt arvandmetüüpoides olevale ToString() meetodile ka muude andmetüüpide vastavad konverteerimismeetodid.
+            //var mingiInfo = "6.7";                                  //On olemas mingisugune teisendamist vajav info
+            //string mingiInfoTekst = Convert.ToString(mingiInfo);    //Convert.ToString() teisendab tundmatust andmetüübist info stringiks/sõneks
+            //char mingiInfoChar = Convert.ToChar(mingiInfo);         //teisendus täheks
+            //int mingiInfoInt = Convert.ToInt32(mingiInfo);          //teisendus int andmetüüpi
+            //long mingiInfoLong = Convert.ToInt64(mingiInfo);        //teisendus long andmetüüpi 
+            //decimal mingiInfoDecimal = Convert.ToDecimal(mingiInfo);//teisendus decimaliks
+            //double mingiInfoDouble = Convert.ToDouble(mingiInfo);   //teisendus double andmetüüpi
+            //byte mingiInfoByte = Convert.ToByte(mingiInfo);         //teisendus baidiks
+            //bool mingiInfoBool = Convert.ToBoolean(mingiInfo);      //teisendus boolean andmetüüpi
 
             /* -= T S Ü K L I D =-                                              */
 
@@ -555,19 +555,21 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
 
             // Do-white tsükkel erineb kõigist teistest tsüklitest sellega, et tingimusekontroll toimub pärast esimest tegevusringi. Kõikides
             // teistes tsüklites toimub tingimusekontroll enne esimest ringi.
-            int tsükliMuutuja1 = 0;                 //Mingisugune muutuja, mis omab tsükli töö tingimuse abil kontrollimiseks vajalikku väärtust
-                                                    //ehk tsüklimuutuja
-            do                                      //"do" on kaistud sõna, mis alustab do while tsüklit, Sellele järgneb tsülöis tehtav koodiplokk
-            {
-                Console.WriteLine(tsükliMuutuja1);  //Koodiploki sees olev tegevus, mis antud juhul kuvatakse tsüklimuutuja arv välja
-                tsükliMuutuja1++;                   //ning tsüklimuutujat suurendatakse.
-                //ILMA TSÜKLIMUUTUJA KAASAMISETA TSÜKLI TÖÖSSE, KÄIB TSÜKKEL RINGI LÕPMATULT, TSÜKLIMUUTUJA TULEB MINGIL KUJUL MUUTA KAS KAUDSELT VÕI
-                //OTSESELT, ET SÜSTEEM SAAKS EDASI TEISTE TEGEVUSE JUURDE MINNA, ILMA SELLETA SEE EI OLE VÕIMALIK
-            } while (tsükliMuutuja1 != 5); //"while" on kaitstud sõna mis do-while tsükli lõpetab, pärast seda toimub esimene tingimuse
-                                           //kontroll, kus kontrollitakse tsükli töösse kaasatud muutuja olukorda. Kui tingimus täitub
-                                           //ehk tingimuse avaldise tulemus on "true" täidetakse veel üks ring, ning kontrollitakse
-                                           //tingimust uuesti. antud juhul tsükkel toimib niikaua, kuni tsüklimuutuja ei ole 5, ta saab
-                                           //olla 4, ja 6 ja ükskõik mis muu, aga mitte 5.
+            //int tsükliMuutuja1 = 0;                 //Mingisugune muutuja, mis omab tsükli töö tingimuse abil kontrollimiseks vajalikku väärtust
+            //                                        //ehk tsüklimuutuja
+            //do                                      //"do" on kaistud sõna, mis alustab do while tsüklit, Sellele järgneb tsülöis tehtav koodiplokk
+            //{
+            //    Console.WriteLine(tsükliMuutuja1);  //Koodiploki sees olev tegevus, mis antud juhul kuvatakse tsüklimuutuja arv välja
+            //    tsükliMuutuja1++;                   //ning tsüklimuutujat suurendatakse.
+            //    //ILMA TSÜKLIMUUTUJA KAASAMISETA TSÜKLI TÖÖSSE, KÄIB TSÜKKEL RINGI LÕPMATULT, TSÜKLIMUUTUJA TULEB MINGIL KUJUL MUUTA KAS KAUDSELT VÕI
+            //    //OTSESELT, ET SÜSTEEM SAAKS EDASI TEISTE TEGEVUSE JUURDE MINNA, ILMA SELLETA SEE EI OLE VÕIMALIK
+            //} while (tsükliMuutuja1 != 5); //"while" on kaitstud sõna mis do-while tsükli lõpetab, pärast seda toimub esimene tingimuse
+            //                               //kontroll, kus kontrollitakse tsükli töösse kaasatud muutuja olukorda. Kui tingimus täitub
+            //                               //ehk tingimuse avaldise tulemus on "true" täidetakse veel üks ring, ning kontrollitakse
+            //                               //tingimust uuesti. antud juhul tsükkel toimib niikaua, kuni tsüklimuutuja ei ole 5, ta saab
+            //                               //olla 4, ja 6 ja ükskõik mis muu, aga mitte 5.
+
+
 
 
         }
