@@ -633,6 +633,8 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                                         //järgmist/mingindat arvu.
                 arvuMassiiv[k] = int.Parse(Console.ReadLine());//Kasutades tsüklimuutujat, täidetakse massiiv.
             }
+                     
+        
         }
     }
 }
