@@ -89,6 +89,9 @@
             //    Console.WriteLine("siin peaks juba sekkuma psühholoog");
             //}
 
+            
+            /* ülesanne 4 */
+            
             //Console.WriteLine("Mis on sinu viimased jalgpallimängu tulemust?");
             //float Punkt = float.Parse(Console.ReadLine());
             //if (Punkt < 0)

@@ -7,8 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="C:\Users\opilane\source\repos\Konspekt_Dmitri_Bogdanov_LOGITge25\Kontroltöö\Ülesanne 3.cs" Link="Ülesanne 3.cs" />
-  </ItemGroup>
-
 </Project>

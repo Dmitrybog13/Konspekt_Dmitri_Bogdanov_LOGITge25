@@ -4,45 +4,29 @@
     {
         static void Main(string[] args)
         {
-            /* Do-while ülesanded*/
-
-            // 1. "arvuta kuni summani"
-            // tee muutuja "täisarv" mille sees on täisarv 0
-            // kirjuta do while tsükkel
-            // tsükli tegevusena lahuta muutujast "täisarv" maha 2
-            // ja kuva muutuja "täisarv" välja
-            // -> do while tsükli tingimuseks kirjuta kontroll, mis kontrollib kas muutujas "täisarv" on arv miinuses rohkem kui -31
-            // peale tsüklit kuva sõnum "tsükkel lõppes"
-
-            //int täisArv = 0;
-            //do
-            //{
-            //    täisArv = täisArv - 2;
-            //    Console.WriteLine(täisArv);
-            //} while (-31 < täisArv);
-            //Console.WriteLine("tsükkel lõppes");
-
-
-
-            // 2. "pikenda sõnumit"
-            // tee muutuja "sõnum" mille sees on tühi string, nt ""
-            // kirjuta do while tsükkel
-            // tsükli tegevusena küsi kasutajalt sõnumile lisa "palun lisa järgmine sõnumi osa
-            // lisa muutujasse "sõnum" kasutaja poolt tehtud sisestus
-            // kuva muutuja "sõnum" välja
-            // -> do while tsükli tingimuseks kirjuta kontroll, mis kontrollib muutuja "sõnum" pikkust .Length abil, kui sõnum on pikem kui 140 tähte, siis tsükkel lõppeb
-            // peale tsüklit kuva sõnum "see sõnum enam twitterisse ei mahuks, kirjuta vähem fam"
-
-            string sõnum = string.Empty;
-            do
+           /* Ülesanne 3 */
+            Console.WriteLine("Mis on sinu viimased mängimis tundid?");
+            float tunde = float.Parse(Console.ReadLine());
+            if (tunde < 0.00)
             {
-                Console.WriteLine("palun lisa sõnumi järgmine osa");
-                string sisestus = string.Empty;
-                sisestus = Console.ReadLine();
-                sõnum += sisestus;
-                Console.WriteLine(sõnum);
-            } while (sõnum.Length <= 140);
-            Console.WriteLine("see sõnum enam twitterisse ei mahuks, kirjuta vähem fam");
+                Console.WriteLine("kahju et sul aega mängida pole :c");
+            }
+            else if (tunde <= 10 && tunde >= 0)
+            {
+                Console.WriteLine("mõõdukas mängija, tubli");
+            }
+            else if (tunde <= 20 && tunde >= 10)
+            {
+                Console.WriteLine("natuke paljuks läheb, kodutööd kannatavad");
+            }
+            else if (tunde <= 40 && tunde >= 20)
+            {
+                Console.WriteLine("liiga palju mängid, kas sa kooli üldse nii jõuad?");
+            }
+            else if (tunde <= 999 && tunde >= 40)
+            {
+                Console.WriteLine("siin peaks juba sekkuma psühholoog");
+            }
         }
     }
 }
