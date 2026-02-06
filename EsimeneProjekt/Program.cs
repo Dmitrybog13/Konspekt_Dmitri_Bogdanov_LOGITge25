@@ -390,43 +390,12 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
 
                 float calculatedData = keskPunkt + unitOfData;
 
-                if (calculatedData < keskPunkt)
+                int i = 0;
+                while (i < 90)
                 {
-                    int i_i = 0;
-                    while (i_i <calculatedData)
-                    {
-                        displayableData += "_";
-                        i_i++;
-                    }
-                    //joonista alates andmest kuni arvuni 0
-                    int i = (int)calculatedData;
-                    while (i < 0)
-                    {
-                        displayableData += "_";
-                        i++;
-                    }
+                    int sm0 = (int)(45 + unitOfData);
+                    if (0 >= i && i 
                 }
-                else if(calculatedData > keskPunkt)
-                {
-                    //joonista alates arvust 0ist kuni andme arvuni
-                    int i = 0;
-                    while (i < calculatedData)
-                    {
-                        displayableData += "_";
-                        i++;
-                    }
-                }
-                else
-                {
-                    int i = 0;
-                    while (i<45)
-                    {
-                        displayableData += "_";
-                    }
-                    displayableData += "X";
-                    //siis kui on 0, joonista joone element
-                }
-                //Console.WriteLine(unitOfData);
                 Console.WriteLine(displayableData);
             }
 
