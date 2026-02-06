@@ -658,7 +658,29 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                 Console.WriteLine("sisesta "+k+". arv");//Tegevus koodiploki sees, kus küsitakse kasutades tsüklimuutujat, kasutajalt
                                                         //järgmist/mingindat arvu.
                 arvuMassiiv[k] = int.Parse(Console.ReadLine());//Kasutades tsüklimuutujat, täidetakse massiiv.
+
             }
+
+            /*   -= T S Ü K L I D    FOREACH =-                          */
+
+            //Foreach tsükkel, võrreldes for-tsükliga, ei oma mitut parameetrit, vaid kindlat kollektsiooni kontrollivat tingimust, koos iga elemendi
+            //jaoks tekitava ajutise muutuja. Foreach tsükkel käib ainult niikaua kuni elemendid pole otsa saanud. Foreach tsükli tööd saab kontrollida
+            //ainult läbi selle töödeldava kollektsiooni enda, st seda et tsüklimuutuja on kollektsiooni elementide arv, selle tsükli jaoks EI TEKITAVA
+            //eraldi muutujat.
+            
+            List<string> sõnad = new List<string>() { "maasikas", "muulukas", "mustikas" }; //Muutuja, kus on andmed, mida tsükkel läbi töötleb.
+            foreach (var üksSõna in sõnad)      //kaitstud sõna "foreach" alustab foreach tsükli, pärast mida on sulud mille vahel on tsükli tööd
+                                                //kontrolliv tingimus. Selle tingimuse sees tekitatakse ajutine muutuja andmetüübiga "var"
+                                                //töödeldava andmekogumi üksikelemendi jaoks. Tingimuse keskel on teine kaitstud sõna "in" mis
+                                                //kontrollib, et tsükkel töötaks selle elemendi jaoks. Peale ühte ringi, vaadatakse kas elemente on järgi
+                                                //kui on, omistatakse muutujate "üksSõna" järgmine element, ning tsükkel käib veel ühe ringi. Kui aga
+                                                //elemente rohkem ei ole, tsükkel lõppeb. Tsükli tööd saab kontrollida näiteks kontrollitava kollektsiooni
+                                                //suurendamisega. Tsüklil ei ole tsüklimuutujat, kuna kollektsiooni järgi tsükkel töötab.
+                                                //Peale sulge on koodiplokk "{}" mille sees mingi tegevus tehakse.
+            {
+                Console.WriteLine(üksSõna);     //Antud juhul, kuvatakse element välja
+            }
+            //NB - tsükli töö ei pea olema üldse seotud kontrollitava kollektsiooniga. Kollektsioon ise võib olla ainult tsüklimuutuja eesmärgil sätestatud.
         }
     }
 }
