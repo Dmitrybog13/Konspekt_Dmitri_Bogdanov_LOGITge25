@@ -343,31 +343,92 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //}
             //Console.WriteLine("perekeskmine on " + Math.Round(perekeskmine, 2) + "m. vanematekeskmine on " + Math.Round(vanematekeskmine, 2) + "m.\nlastekeksmine on " + Math.Round(lastekeskmine, 2) + "m. kahe keskmise vahe on " + Math.Round(vahe, 2) + "m.");
 
-            /* näiteülesanne 9 - sünoptiku sõnum*/
+            ///* näiteülesanne 9 - sünoptiku sõnum*/
 
-            // kirjuta programm mis küsib kasutajalt viie järgmise päeva temperatuuri ja ilma kirjeldust
-            // kui sünoptik on sisestused lõpetanud, kuva viis rida, mis kirjeldab viis päeva mõlema omadusega
+            //// kirjuta programm mis küsib kasutajalt viie järgmise päeva temperatuuri ja ilma kirjeldust
+            //// kui sünoptik on sisestused lõpetanud, kuva viis rida, mis kirjeldab viis päeva mõlema omadusega
 
-            Console.WriteLine("Tere sünoptik, ");
-            float[] temps = new float[5]; // temperatuuride massiiv
-            string[] kirjeldused = new string[5]; // kirjelduste massiiv
-            for (int i = 0; i < temps.Length; i++) //võtame sünoptikult temperatuuri andmed ükshaaval
+            //Console.WriteLine("Tere sünoptik, ");
+            //float[] temps = new float[5]; // temperatuuride massiiv
+            //string[] kirjeldused = new string[5]; // kirjelduste massiiv
+            //for (int i = 0; i < temps.Length; i++) //võtame sünoptikult temperatuuri andmed ükshaaval
+            //{
+            //    Console.WriteLine("esita palun järgmine temperatuur:");
+            //    temps[i] = float.Parse(Console.ReadLine());
+            //}
+            //Console.WriteLine("Ole kirjelda ka eesolev nädal, ");
+            //for (int i = 0; i < kirjeldused.Length; i++) //võtame sünoptikult päeva kirjelduse andmed ükshaaval
+            //{
+            //    Console.WriteLine("kirjelda "+(i+1)+". päeva:");
+            //    kirjeldused[i] = Console.ReadLine();
+            //}
+            //Console.WriteLine("Palun edasta uudistejaamale ilmateade:");
+            //for (int i = 0; i < temps.Length; i++)
+            //{
+            //    Console.WriteLine((i+1)+". päeval on temperatuur " + temps[i]+" kraadi ja ilm on " + kirjeldused[i]+".");
+            //} 
+
+            List<float> GraphData = new List<float>()
             {
-                Console.WriteLine("esita palun järgmine temperatuur:");
-                temps[i] = float.Parse(Console.ReadLine());
+                3.6f,
+                0,
+                0,
+                4.5f,
+                23.8f,
+                106f,
+                42.2f,
+                -5.2f,
+                0,
+                0,
+                7f,
+                6f,
+            };
+            int keskPunkt = 45;
+            foreach (var unitOfData in GraphData)
+            {
+                string displayableData = "";
+
+                float calculatedData = keskPunkt + unitOfData;
+
+                if (calculatedData < keskPunkt)
+                {
+                    int i_i = 0;
+                    while (i_i <calculatedData)
+                    {
+                        displayableData += "_";
+                        i_i++;
+                    }
+                    //joonista alates andmest kuni arvuni 0
+                    int i = (int)calculatedData;
+                    while (i < 0)
+                    {
+                        displayableData += "_";
+                        i++;
+                    }
+                }
+                else if(calculatedData > keskPunkt)
+                {
+                    //joonista alates arvust 0ist kuni andme arvuni
+                    int i = 0;
+                    while (i < calculatedData)
+                    {
+                        displayableData += "_";
+                        i++;
+                    }
+                }
+                else
+                {
+                    int i = 0;
+                    while (i<45)
+                    {
+                        displayableData += "_";
+                    }
+                    displayableData += "X";
+                    //siis kui on 0, joonista joone element
+                }
+                //Console.WriteLine(unitOfData);
+                Console.WriteLine(displayableData);
             }
-            Console.WriteLine("Ole kirjelda ka eesolev nädal, ");
-            for (int i = 0; i < kirjeldused.Length; i++) //võtame sünoptikult päeva kirjelduse andmed ükshaaval
-            {
-                Console.WriteLine("kirjelda "+(i+1)+". päeva:");
-                kirjeldused[i] = Console.ReadLine();
-            }
-            Console.WriteLine("Palun edasta uudistejaamale ilmateade:");
-            for (int i = 0; i < temps.Length; i++)
-            {
-                Console.WriteLine((i+1)+". päeval on temperatuur " + temps[i]+" kraadi ja ilm on " + kirjeldused[i]+".");
-            } 
-
 
             /*
                 üleval harjutused
@@ -445,6 +506,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                    // 3 - omistusoperaator mis annab muutujale andmed sisse
                                    // 4 - andmed mida omistatakse
                                    // 5 - lauselõpumärk
+            
             //                        6
             List<bool> näidis2 = new List<bool>(); // 6 - Kaitstud sõna "new" kasutatakse siis kui tahetakse instantsieerida uude muutujasse
                                                    //     väärtust milleandmetüüp on kompleksne, ja vajab kontruktori väljakutset.
