@@ -446,6 +446,36 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                    // 4 - andmed mida omistatakse
                                    // 5 - lauselõpumärk
 
+            /*2. - LOEND */
+            // List<T>  -> Loend on komposiitandmetüüb, kus sarnaselt massiiviga, saab olla mitmeid samat tüüpi andmeid. List kirjutatakse kui oma andmetüüp,
+            //             Kus sulgude vahel on loendis olevate individuaalsete elementide andmetüüpi. Samamoodi nagu massiive, saab loendeid olla ükskõik
+            //             millist lihtandmetüüpi ja komposiitandmetüüpi (isegi kui see on teine list). Erinevalt massiivist aga ei pea ütlema kui pikk loend
+            //             ise on, massiivis tuleb see ette öelda. Loendi eripära on see, et teda saab dünaamiliselt oma pikkusel muuta, see tähendab et
+            //             elemente saab eemaldada koos selle elemendi asukohaga. Massiivi puhul nii teha ei saa sest massiiv on kontantse ehk
+            //             muutumatu pikkusega. Listi üksikelemendi andmetüüp asub noolsulgude vahel "<>" kaitstud sõna "List" järel.
+            // Esimene tekitusviis:
+            List<int> arvuloend = new List<int>();  //andmetüübi kirjeldus "List<>" näitab et tegu on loendiga, Listi noolsugude vahel, on loendis olevate
+                                                    //andmete andmetüüp, antud juhul on siin täisarvu, ehk "int". Muutuja enda nimeks, kus andmeid
+                                                    //hoitakse on "arvuLoend". Sellesse muutujasse omistatakse kaitstud sõna "new" abil uus, PIKKUSETA ja tühi
+                                                    //loend täisarvutega.
+            
+            // Teine tekitusviis:
+            List<int> arvuLoend2 = new List<int>() { 1, 2, 3 }; //Teine loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga,
+                                                                //Listi noolsugude vahel, on loendis olevate andmete andmetüüp, antud juhul on siin
+                                                                //täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid hoitakse on "arvuLoend2". Sellesse
+                                                                //muutujase omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega, kuid
+                                                                //pärast andmetüübi taga olevaid sulge, anname loogiliste sulgude vahel talle kaasa kohe
+                                                                //ka elemendid. Antud juhul on tegu täisarvudega 1, 2 ja 3. Enam ei ole tegu PIKKUSETA EGA
+                                                                //TÜHJA loendiga, vaid sarnaselt massiivsile, tekib selle loendi pikkus, põhinedes sellele
+                                                                //mitu elementi on kaasa antud.
+            // Kolmas tekitusviis:
+            List<int> arvuLoend3 = new List<int>(3);         //Kolmas loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga,
+                                                             //Listi noolsugude vahel, on loendis olevate andmete andmetüüp, antud juhul on siin
+                                                             //täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid hoitakse on "arvuLoend2". Sellesse
+                                                             //muutujase omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega, kuid loend omab kolme
+                                                             //tühja elementi. Elementide arv sätestatakse peale noolsulge olevate tavaliste sulgude vahele arve, ega väärtusi, nende elementide sees veel ei ole.
+
+
             /*   -= K A I T S T U D   S Õ N A D =-                  */
             //
             // Kaitstud sõnad on kindlad nimisõnad/tyegusõnad mida C# kasutab oma koodistruktuuride tähistamiseks
