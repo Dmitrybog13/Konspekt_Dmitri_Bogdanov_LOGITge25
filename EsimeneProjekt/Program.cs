@@ -445,6 +445,11 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                    // 3 - omistusoperaator mis annab muutujale andmed sisse
                                    // 4 - andmed mida omistatakse
                                    // 5 - lauselõpumärk
+            List<bool> näidis2 = new List<bool>(); // 6 - Kaitstud sõna "new" kasutatakse siis kui tahetakse instantsieerida uude muutujasse
+                                                   //     väärtust milleandmetüüp on kompleksne, ja vajab kontruktori väljakutset.
+                                                   //     Komplektssetel andmetüüpidel on tihti vaja sisemiselt üles ehitada ennast
+                                                   //     teiste andmetüüpide põhjal.
+
 
             /*2. - LOEND */
             // List<T>  -> Loend on komposiitandmetüüb, kus sarnaselt massiiviga, saab olla mitmeid samat tüüpi andmeid. List kirjutatakse kui oma andmetüüp,
