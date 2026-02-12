@@ -7,14 +7,39 @@
             // #n1. "Tervitus"
             // kirjuta programm mis,
             // - küsib tsükliga kasutajalt tema eesnime
+            string eesNimi = string.Empty;
+            while (eesNimi == string.Empty)
+            {
+                Console.WriteLine("Palun sisesta oma nimi siia: ");
+                eesNimi = Console.ReadLine();
+            }
             // - - küsitakse uuesti tühja sisendi korral
             // - küsib kasutajalt tema keskmist nime
+            string keskmineNimi = string.Empty;
+            while (keskmineNimi == string.Empty)
+            {
+                Console.WriteLine("Palun sisesta oma keskmine nimi siia: ");
+                keskmineNimi = Console.ReadLine();
+            }
             // - - küsitakse uuesti tühja sisendi korral
             // - küsib kasutajalt tema perekonnanime
+            string perekonnaNimi = string.Empty;
+            while (perekonnaNimi == string.Empty)
+            {
+                Console.WriteLine("Palun sisesta oma perekonna nimi siia: ");
+                perekonnaNimi = Console.ReadLine();
+            }
             // - - küsitakse uuesti tühja sisendi korral
             // - tema vanust
+            int minuVanus = 0;
+            while (minuVanus < 1)
+            {
+                Console.WriteLine("Palun sisesta oma vanus siia: ");
+                minuVanus = int.Parse(Console.ReadLine());
+            }
             // - - küsitakse uuesti tühja sisendi korral
             // - ning väljastab talle tervituslause, kasutades kõiki muutujaid
+            Console.WriteLine($"Tere päevast {eesNimi} {perekonnaNimi}! või kutsun sind {keskmineNimi}? Oled tublisti kasvanud, oled juba {minuVanus}-aastane");
 
             // #n2. "Minu lemmiksnäkk"
             // kirjuta programm mis
