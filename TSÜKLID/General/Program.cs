@@ -195,8 +195,8 @@
             //    }
             //}
             //Console.WriteLine("Head aega!"); //kui põhitsükkel katkeb, ütleme headaega
-            
-            
+
+
             // #n4. "Stonksid"
             // kirjuta programm mis töötab tsüklis ja omab tehtavat koodi mis:
             // küsib kasutajalt temapoolse investeeritava summa
@@ -210,12 +210,111 @@
             // kui kasutaja portfell pole jõudnud alla nulli, siis kasutaja saab valida kas investeerida uuesti või mitte
             // kui aga portfell on nullis, öeldakse kasutajale et on pankrotis
             // kuvatakse kasutajale tema portfelli lõppväärtus.
-        
-        
-        
-        
-        
-        
+
+            Random juhuarv = new Random();
+
+            string uuesti = "jah";
+
+            while (uuesti == "jah")
+            {
+                Console.WriteLine("Sisesta summa mida sa tahad investeerima!:");
+                double portfell = 0.0;
+
+                while (!double.TryParse(Console.ReadLine(), out portfell) || portfell <= 0)
+                {
+                    Console.WriteLine("Vale sisestus:");
+                }
+
+                Console.WriteLine("Vali firma kus sa tahad investeerima");
+                Console.WriteLine("1 - Microsoft");
+                Console.WriteLine("2 - HP");
+                Console.WriteLine("3 - Lenovo");
+
+                int firmaValik = 0;
+                while (!int.TryParse(Console.ReadLine(), out firmaValik) || (firmaValik < 1 || firmaValik > 3))
+                {
+                    Console.WriteLine("Vale valik. Sisesta 1, 2 või 3:");
+                }
+
+                string firmaNimi = "";
+                switch (firmaValik)
+                {
+                    case 1:
+                        firmaNimi = "Microsoft";
+                        break;
+                    case 2:
+                        firmaNimi = "HP";
+                        break;
+                    case 3:
+                        firmaNimi = "Lenovo";
+                        break;
+                }
+
+                
+                Console.WriteLine("Mitu päeva investeering olla?");
+                int paevad = 0;
+
+                while (!int.TryParse(Console.ReadLine(), out paevad) || paevad <= 0)
+                {
+                    Console.WriteLine("Vale sisestus, peaks sisestama suurem kui 0:");
+                }
+
+                bool pankrotis = false;
+
+                for (int paev = 1; paev <= paevad; paev++)
+                {
+                    double kordaja = 1.0;
+
+                    if (firmaValik == 1)
+                    {
+                        kordaja = -1.15;
+                    }
+                    else if (firmaValik == 2)
+                    {
+                        int r = juhuarv.Next(1, 101);
+                        kordaja = 1 + (r / 1000.0);
+                    }
+                    else if (firmaValik == 3)
+                    {
+                        int r = juhuarv.Next(1, 101);
+                        kordaja = 1 + (-r / 1000.0); 
+                    }
+
+                    portfell = portfell * kordaja;
+
+                    Console.WriteLine(
+                        paev + ". päev | firma: " + firmaNimi +
+                        " | kordaja: " + Math.Round(kordaja, 3) +
+                        " | portfell: " + Math.Round(portfell, 2)
+                    );
+
+                    if (portfell <= 0)
+                    {
+                        Console.WriteLine("Oled pankrotis MADAFAKA HUEHUEHUEHUE");
+                        pankrotis = true;
+                        break;
+                    }
+                }
+
+                Console.WriteLine("Portfelli lõppväärtus: " + Math.Round(portfell, 2));
+
+                if (!pankrotis)
+                {
+                    Console.WriteLine("Kas tahad investeerida uuesti? (Why not/NAH)");
+                    uuesti = (Console.ReadLine() ?? "").Trim().ToLower();
+                }
+                else
+                {
+                    
+                    break;
+                }
+            }
+
+            Console.WriteLine("Bye bye");
+
+
+
+
         }
     }
 }
