@@ -195,6 +195,8 @@
             //    }
             //}
             //Console.WriteLine("Head aega!"); //kui põhitsükkel katkeb, ütleme headaega
+            
+            
             // #n4. "Stonksid"
             // kirjuta programm mis töötab tsüklis ja omab tehtavat koodi mis:
             // küsib kasutajalt temapoolse investeeritava summa

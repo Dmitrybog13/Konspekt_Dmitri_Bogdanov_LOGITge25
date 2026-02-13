@@ -474,6 +474,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             ///*   -= K O M P O S I I T A N D M E T Ü Ü B I D =-   */
             //1. Massiiv    
             //2. Loend
+            //
 
             /* 1 - MASSIIV */
             // []       -> Massiiv on komposiitandmetüüp, mille sees saab olla mitmeid sama tüüpi lihtandmeid. Massiivi tähistatakse kantsulgudega.
