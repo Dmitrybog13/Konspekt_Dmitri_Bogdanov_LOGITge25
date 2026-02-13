@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.InteropServices.JavaScript; //<-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
+﻿using System; //<-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
 //süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. Teised projektid viidatakse tavaliselt solution (.sln)
 //failist.
 
@@ -369,7 +368,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //    Console.WriteLine((i+1)+". päeval on temperatuur " + temps[i]+" kraadi ja ilm on " + kirjeldused[i]+".");
             //} 
 
-            ///* näiteülesanne 10 - graafik */
+            ///* näiteülesanne 10 - graafik*/
             //// andmed mida graafikuna kujutada tahetakse
             //List<float> graphData = new List<float>()
             //{
@@ -474,7 +473,8 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             ///*   -= K O M P O S I I T A N D M E T Ü Ü B I D =-   */
             //1. Massiiv    
             //2. Loend
-            //
+            //3. Sõnastik
+            //4. Tuple
 
             /* 1 - MASSIIV */
             // []       -> Massiiv on komposiitandmetüüp, mille sees saab olla mitmeid sama tüüpi lihtandmeid. Massiivi tähistatakse kantsulgudega.
@@ -527,7 +527,70 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                                             //tühja elementi. Elementide arv sätestakase peale noolsulge olevate tavaliste sulgude vahele.
                                                             //Arve, ega väärtusi, nende elementide sees veel ei ole.
 
-            ///* Muutuja nime näide: */
+            /* 3 - SÕNASTIK */
+            //Dictionary<T, T>      ->  Dictionary on komposiitandmetüüp mis omab võtiväärtuspaare. Erinevalt eelnevatest komposiitandmetüüpidest, saab
+            //                          Dictionary omada kahte erinevat andmetüüpi millest esimene väljendab võtme andmetüüpi ning teine võtme taga olevat
+            //                          väärtuse andmetüüpi. Need andmetüübid saavad üksteisest erineda või isegi omada klasse andmetüüpidena ning ka
+            //                          muid komposiitandmetüüpe.
+            // Esimene tekitusviis:
+            Dictionary<int,string> sõnastik = new Dictionary<int, string>();
+            //Andmetüübi kirjeldus "Dictionary<>" näitab et tegu on sõnastikuga, ehk loendiga võtiväärtuspaaridest. Dictionary noolsulgude vahel asetatakse
+            //kaks andmetüüpi, esimene neist on võtme andmetüüp (antud juhul "int") teine neist on võtme taga oleva väärtuse andmetüüp (antud juhul "string").
+            //Muutuja nimeks on "sõnastik" kuhu omistatakse käsusõnaga "new" uus tühi sõnastik vastavate andmetüüpidega.
+
+            // Teine tekitusviis:
+            Dictionary<int,string> sõnastik2 = new Dictionary<int, string>() { { 1, "astelpaju" },{ 2, "muulukas" },{ 3, "maasikas" } };
+            //Andmetüübi kirjeldus "Dictionary<>" näitab et tegu on sõnastikuga, ehk loendiga võtiväärtuspaaridest. Dictionary noolsulgude vahel asetatakse
+            //kaks andmetüüpi, esimene neist on võtme andmetüüp (antud juhul "int") teine neist on võtme taga oleva väärtuse andmetüüp (antud juhul "string").
+            //Muutuja nimeks on "sõnastik" kuhu omistatakse käsusõnaga "new" uus sõnastik koos elementidega, mis asuvad sulgude taga olevates loogelistes
+            //sulgudes ja iga element ise on veel omakorda loogelistes sulgudes infoga mis vastab dictionary andmetüüpide sätestusele.
+
+            //Sõnastiku tööriistad:
+            sõnastik.Add(4, "tikker" );         //.Add() võimaldab olemasoleva sõnaraamatu lõppu lisada elementi. Sulgude vahel on andmed, mille andmetüübid
+                                                //vastavad täiendatava sõnastiku andmetüüpide sätestusega.
+            sõnastik.Remove(2);                 //.Remove() eemaldab kindla võtme järgi sõnastikus oleva elemendi. Sulgude vahel on selle võtme
+                                                //andmetüübile vastav väärtus mitte võtme taga oleva väärtuse väärtus.
+            sõnastik.Clear();                   //.Clear() teeb sõnastiku täielikult tühjaks.
+
+            sõnastik.ContainsKey(4);            //.ContainsKey() tagastab kas "true" või "false" vastavalt sellele kas ta leiab antud sõnastikust parameetrina
+                                                //kaasa antud võtme.
+            sõnastik.ContainsValue("tikker");   //.ContainsValue() tagastab kas "true" või "false" vastavalt sellele kas ta leiab antud sõnastikust parameetrina
+                                                //kaasa antud väärtuse.
+
+            /* 4 - MITMIK/HULK  */
+            // Andmetüübi kirjeldus "Tuple<>" näitab et siin on tegu erinevate andmete hulgaga ehk mitmikuga. Tuple noolsulgude vahele asetatakse kõik soovitud
+            // vajadusel erinevad andmetüübid mis väljendavad tupli sees väljenduvate andmete asukohtade andmetüüpe. Kui esimene andmetüüp on string, siis
+            // Tuple esimene objekt on string tüüpi andmed, kui teine andmetüüp on List<int[]> hoitakse teises objektis loendeid mille sees on massiivid
+            // täisarvudega. Just nagu kõik teised komposiitandmetüübid, võtab ka Tuple vastu kõiki andmetüüpe, kaasaarvatud iseennast. Erinevalt teistest
+            // komposiitandmetüüpidest, ei saa ühte Tuple elementi kohapeal muuta, vaid kogu Tuple tuleb protsessi käigus rekombineerida muudetud andmetest
+            // ja olemasolevatest andmetest uuesti.
+            Tuple<string, string> piparmündiTupla = new Tuple<string, string>("vasak tupla", "parem tupla");
+
+            // Esimene tekitusviis:
+            Tuple<bool, int, string> someTuple = new Tuple<bool, int, string>( true, 1, "abc" );
+            //Andmetüüvbi kirjeldus "Tuple<>" ütleb et selles muutujas on mitmik. Selles mitmikus on esimeseks bool teiseks int ja kolmandaks string tüüpi
+            //objektid. Tuple vajab ka kohe esmast omistust, seega kaitstud sõna new ja andmetüübi täiskirjeldus "Tuple<bool, int, string>" vajab peale sead
+            //sulgude vahele esmaseid andmeid. Antud juhul on siin ( true, 1, "abc" );
+
+            //Tuple töötlemine:
+            // Ütleme et on olemas ülaltoodud piparmündiTupla. See on Tuple. Justnagu päris tupla, tahame sealt ühe ära süüa. ehk asendada ühe kahest objektist
+            // uue sõnega mis loeks "NJÄM NJÄM NJÄM".
+            //Tuplet ei saa muuta, aga seda saab rekombineerida, seega me saame teha nii:
+            string uuspool = "NJÄM NJÄM NJÄM";
+            piparmündiTupla = new Tuple<string, string>(piparmündiTupla.Item1,uuspool);
+
+            //Tuple adresseerimine:
+            // justnagu eelnevalt näidatud, me sasame adresseerida tuple erinevaid objekte siiski eraldi. Selle jaoks on iga tekitatud Tuple sees genereeritud
+            // muutujad ".Item#" millega me saame adresseerida soovitud objekti.
+            // NB! erinevalt loendist ja massiivist, algab lugemine arvust 1. ehk esimene Item ei ole Item0 vaid Item1.
+            string pool1 = piparmündiTupla.Item1; // siin asetame muutujasse "pool1" valitud tuplest esimese objekti, ning
+            string pool2 = piparmündiTupla.Item2; // seal asetame muutujasse "pool2" valitud tuplest teise objekti
+
+
+
+
+
+            /*   -= M U U T U J A   N I M E T A M I N E            */
             ////string string = "abc"; //is bäd
             //string sõne = "abc"; //is gud
 
@@ -546,25 +609,23 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                                     //     Komplekssetel andmetüüpidel on tihti vaja sisemiselt üles ehitada ennast
                                                     //     teiste andmetüüpide põhjal.
 
-            
-            
-            /*   -= J U H U A R V =-                  */
+            /*   -= J U H U A R V =-                                */
             //
-            // Random klass annab võimaluse programeerijale genereerida pseudo-random väärtusi.
+            // Random klass annab võimaluse programmeerijale genereerida pseudo-random väärtusi.
             Random juhuarv = new Random();      //Klassinimi "Random" on kasutatav kui andmetüüp, mis ütleb et järgnevas muutujas nimega "juhuarv" on
                                                 //uus random tüüpi objekt, mis omistatakse sinna "new Random()" käsuga. Konstruktor ulatab muutuja sisse
                                                 //Random tüüpi klassi. Antud muutuja nüüd ise ei ole see juhuarv, ta toimib kui juhuarvude generaatorina
-                                                //millest punkti abiil saab adresseerida Random genereerimise tööriistu
+                                                //millest punkti abil saab adresseerida Random genereerimise tööriistu.
             int a = juhuarv.Next();             //.Next() on meetod Random klassis mis on genereeriv meetod juhuarvu genereerimiseks. Seda saab kasutada
                                                 //kui väärtusena, ning ta tagastab suvalise arvu. Ilma parameetrita tagastab andmetüübi maksimaalpiirides
-            int miski = juhuarv.Next(5);        //.Next() ühe paraametriga anname talle ülemise piiri, mille alumine piir on vaikeväärtusena 0
+                                                //mingisuguse juhuarvu
+            int miski = juhuarv.Next(5);        //.Next() ühe parameetriga anname talle ülemise piiri, mille alumine piir on vaikeväärtusena 0
             int miski2 = juhuarv.Next(-5, 5);   //.Next() kahe parameetriga kirjeldab ära täieliku vahemiku, olgu see siis negatiivne või positiivne
             double aDbl = juhuarv.NextDouble(); //.NextDouble() annab double-tüüpi väärtusi, parameetri kasutus on identne.
-            long aLng = juhuarv.NextSingle();   //.NextSingle() annab float-tüüpi väärtuse mis on vahemikus 0.0 ja 1.0
-                
+            float aLng = juhuarv.NextSingle();  //.NextSingle() annab float-tüüpi väärtuse mis on vahemikus 0.0 ja 1.0.
             
+
             /*   -= K A I T S T U D   S Õ N A D =-                  */
-            
             //
             // Kaitstud sõnad on kindlad nimisõnad/tyegusõnad mida C# kasutab oma koodistruktuuride tähistamiseks
             // Et ära hoida keerukat näpuga jälje ajamist, ning kompilaatori töö lihtsustamist, ei saa järgnevaid sõnu
