@@ -95,59 +95,59 @@
             // siis küsitakse kas kasutaja tahab mõne marja kohta veel infot, ning tsükkel jätkub
             // ⭐iseseisvalt lisa juurde puude tuvastamine ⭐
 
-            bool anuddaJuan = true;
-            string mida = string.Empty;
-            List<string> valikud = new List<string>() { "seent", "marja", "puud" };
-            List<string> seeneNimed = new List<string> { "kukeseen", "puravik", "sitaseen" };
+            bool anuddaJuan = true; // hoiame meeles kas kasutaja tahab veel infot
+            string mida = string.Empty; // mida kasutaja täpselt tahab
+            List<string> valikud = new List<string>() { "seent", "marja", "puud" }; // loend võimalike valikutega
+            List<string> seeneNimed = new List<string> { "kukeseen", "puravik", "sitaseen" }; // seenevalikute loend nimedega
             List<string> seeneInfod = new List<string>
             {
                 "Kukeseen on kollane ja näeb välja nagu keegi oleks pasuna maha \nmatnud ning siis mootorattaga üle sõitnud.",
                 "Puravik on pealt pruun ja jalg on hele. Siuke ilus punsu.",
                 "Sitaseen on pruun, keerlev ja tõenäoliselt lähima koera poolt tehtud kingitus."
-            };
-            List<string> marjaNimed = new List<string> { "astelpaju", "muulukas", "maasikas" };
+            }; // seente infode loend
+            List<string> marjaNimed = new List<string> { "astelpaju", "muulukas", "maasikas" }; // marjavalikute loend nimedega
             List<string> marjaInfod = new List<string>
             {
                 "Astelpaju on kollane, maitseb nagu apelsin ja selle seeme on alfa-suurusega",
                 "Kes seda teab milline muulukas välja näeb...",
                 "Maasikas on maailma parim mari, kui sa leiad selle metsast, mitte poest."
-            };
-            List<string> puudeNimed = new List<string> { "Tamm", "Saar", "Banaanipalm" };
+            };// marjade infode loend
+            List<string> puudeNimed = new List<string> { "Tamm", "Saar", "Banaanipalm" }; // puudevalikute loend nimedega
             List<string> puudeInfod = new List<string>
             {
                 "Tamm on suur ja tugev ning võib elada mitmesaja aastaseks, lehed on sinkavonkalised.",
                 "Saar on ka suur ja tugev, kuid erinevalt tammest ei ole mürgine.",
                 "Banaanipalm on rohuline, mingi tohman pani selle puude hulka."
-            };
+            };// puude infode loend
 
-            while (anuddaJuan == true)
+            while (anuddaJuan == true) // tsükkel käib niikaua kuni kasutaja tahab infot veel saada
             {
-                do
+                do // kusime kasutajalt selle tsükliga mida ta tahab
                 {
                     Console.WriteLine("Kas sa otsid seent, marja või puud?");
-                    mida = Console.ReadLine();
+                    mida = Console.ReadLine(); // omistame muutujasse väärtuse
                 }
                 //while (mida != "seent" || mida != "marja");
                 //while (!new List<string>() { "seent", "marja"}.Contains(mida));
-                while (!valikud.Contains(mida));
+                while (!valikud.Contains(mida)); //ning kontrollime kas sisestatud väärtus on üks valikutest
 
-                if (mida == "seent")
+                if (mida == "seent") // kui on valitud seent
                 {
-                    List<int> seeneValikud = new List<int>() { 1, 2, 3 };
-                    int seeneArv = 0;
-                    do
+                    List<int> seeneValikud = new List<int>() { 1, 2, 3 }; //tekitame võimalike sisestuste arvloendi
+                    int seeneArv = 0; // hetkel on valik väljaspool võimalikke arvude vahemikku
+                    do // küsime kasutajalt millist seent võimalikest ta tahab
                     {
                         Console.WriteLine("Palun vali seen, mille kohta tahad infot, valikus on " + seeneNimed.Count + " tükki");
-                        for (int i = 0; i < seeneNimed.Count; i++)
+                        for (int i = 0; i < seeneNimed.Count; i++) //kuvame valikud arvudega
                         {
                             Console.WriteLine((i + 1) + ". " + seeneNimed.ElementAt(i));
                         }
-                        seeneArv = int.Parse(Console.ReadLine());
-                    } while (!seeneValikud.Contains(seeneArv));
+                        seeneArv = int.Parse(Console.ReadLine()); //ja ootame kuni kasutaja sisestab arvu
+                    } while (!seeneValikud.Contains(seeneArv)); // küsime niikaua kuni sisestatud on üks valikutest
 
-                    Console.WriteLine(seeneInfod.ElementAt(seeneArv - 1));
+                    Console.WriteLine(seeneInfod.ElementAt(seeneArv - 1)); // kui tsükkel saavutab tahetud tulemuse kuvame valiku
                 }
-                else if (mida == "marja")
+                else if (mida == "marja") // kui on valitud marja siis -||-
                 {
                     List<int> marjaValikud = new List<int>() { 1, 2, 3 };
                     int marjaArv = 0;
@@ -163,7 +163,7 @@
 
                     Console.WriteLine(marjaInfod.ElementAt(marjaArv - 1));
                 }
-                else
+                else // kui on valitud midagi muud, antud juhul saab ainult puud olla, siis ka  -||-
                 {
                     List<int> puudeValikud = new List<int>() { 1, 2, 3 };
                     int puudeArv = 0;
@@ -179,22 +179,22 @@
 
                     Console.WriteLine(puudeInfod.ElementAt(puudeArv - 1));
                 }
-                string kasutajaOtsus = "";
-                do
+                string kasutajaOtsus = ""; // teeme muutuja kasutaja otsuse jaoks programmi kasutamise kohta
+                do //küsime talt kas ta tahab infot veel
                 {
-                    Console.WriteLine("Kas tahad veel infot? jah/ei");
-                    kasutajaOtsus = Console.ReadLine();
-                } while ((kasutajaOtsus != "jah" && kasutajaOtsus != "ei"));
-                if (kasutajaOtsus == "jah")
+                    Console.WriteLine("Kas tahad veel infot? jah/ei"); 
+                    kasutajaOtsus = Console.ReadLine(); //ootame temalt vastuse
+                } while ((kasutajaOtsus != "jah" && kasutajaOtsus != "ei")); //ning kui ta ei ole jah või ei, küsime uuesti
+                if (kasutajaOtsus == "jah") // kui vastus on jah
                 {
-                    anuddaJuan = true;
+                    anuddaJuan = true; //seame muutuja mis hoiab meeles kas kasutaja tahab veel infot väärtuseks true
                 }
                 else
                 {
-                    anuddaJuan = false;
+                    anuddaJuan = false; //kõige muu puhul false
                 }
             }
-            Console.WriteLine("Head aega!");
+            Console.WriteLine("Head aega!"); //kui põhitsükkel katkeb, ütleme headaega
             // #n4. "Stonksid"
             // kirjuta programm mis töötab tsüklis ja omab tehtavat koodi mis:
             // küsib kasutajalt temapoolse investeeritava summa
