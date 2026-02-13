@@ -1,4 +1,5 @@
-﻿using System; //<-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
+﻿using System;
+using System.Runtime.InteropServices.JavaScript; //<-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
 //süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. Teised projektid viidatakse tavaliselt solution (.sln)
 //failist.
 
@@ -368,67 +369,67 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //    Console.WriteLine((i+1)+". päeval on temperatuur " + temps[i]+" kraadi ja ilm on " + kirjeldused[i]+".");
             //} 
 
-            /* näiteülesanne 10 - graafik */
-            // andmed mida graafikuna kujutada tahetakse
-            List<float> graphData = new List<float>()
-            {
-                -3.6f, //negatiivne
-                0,     //0
-                0,
-                -4.5f,
-                23.8f, //positiivne
-                90f,   //max value
-                42.2f,
-                -5,2f,
-                0,
-                0,
-                7f,
-                6f,
-            };
-            //graafiku joonistamise jaoks vajalik keskpunkti asukoht ühes reas
-            int keskPunkt = 45;
-            //foreach tsükkel töötleb andmed läbi
-            foreach (var unitOfData in graphData)
-            {
-                //kuvatav rida, hetkel tühi
-                string displayableData = "";
+            ///* näiteülesanne 10 - graafik */
+            //// andmed mida graafikuna kujutada tahetakse
+            //List<float> graphData = new List<float>()
+            //{
+            //    -3.6f, //negatiivne
+            //    0,     //0
+            //    0,
+            //    -4.5f,
+            //    23.8f, //positiivne
+            //    90f,   //max value
+            //    42.2f,
+            //    -5,2f,
+            //    0,
+            //    0,
+            //    7f,
+            //    6f,
+            //};
+            ////graafiku joonistamise jaoks vajalik keskpunkti asukoht ühes reas
+            //int keskPunkt = 45;
+            ////foreach tsükkel töötleb andmed läbi
+            //foreach (var unitOfData in graphData)
+            //{
+            //    //kuvatav rida, hetkel tühi
+            //    string displayableData = "";
 
-                //normaliseeritud andmed keskpunkti suhtes
-                float calculatedData = keskPunkt + unitOfData;
+            //    //normaliseeritud andmed keskpunkti suhtes
+            //    float calculatedData = keskPunkt + unitOfData;
 
-                //while-tsükli muutuja
-                int i = 0;
-                while (i < 90) //tsükkel töötab niikaua kuni i ei ole 90 ega suurem
-                {
-                    //sm0 rea alguspunk nmähtavale pulgale, mitte tühjale alale
-                    int sm0 = (int)(45 + unitOfData);
+            //    //while-tsükli muutuja
+            //    int i = 0;
+            //    while (i < 90) //tsükkel töötab niikaua kuni i ei ole 90 ega suurem
+            //    {
+            //        //sm0 rea alguspunk nmähtavale pulgale, mitte tühjale alale
+            //        int sm0 = (int)(45 + unitOfData);
 
-                    if (0 >= i && i < sm0) 
-                    //kui i on vahemikus 0 ja sm0, 
-                    {   displayableData += "░";   } //siis joonistame tumeda tähemärgi
-                    else if (sm0 >= i && i < 45) 
-                    //kui i on vahemikus sm0 ja 45, 
-                    {   displayableData += "░"; } //siis joonistame tumeda tähemärgi
-                    else if (sm0 >= i && i < 90) 
-                    //kui i on vahemikus sm0 ja 90, 
-                    {   displayableData += "▓"; } //siis joonistame heleda tähemärgi
-                    else if (45 >= i && i < sm0)
-                    //kui i on vahemikus 45 ja sm0, 
-                    { displayableData += "▓"; } //siis joonistame heleda tähemärgi
-                    else if ( i >= sm0 && i < 45)
-                    //kui i on vahemikus sm0 ja 45, 
-                    { displayableData += "▓"; }//siis joonistame heleda tähemärgi
-                    else if (i == 45)
-                    {
-                        { displayableData += "║"; } //siis joonistame pulga tähemärgi
-                    }
-                    else
-                    // kõikide muude puhul joonistame tumeda tähemärgi
-                    {   displayableData += "░";   }
-                    i++;
-                }
-                Console.WriteLine(displayableData);
-            }
+            //        if (0 >= i && i < sm0) 
+            //        //kui i on vahemikus 0 ja sm0, 
+            //        {   displayableData += "░";   } //siis joonistame tumeda tähemärgi
+            //        else if (sm0 >= i && i < 45) 
+            //        //kui i on vahemikus sm0 ja 45, 
+            //        {   displayableData += "░"; } //siis joonistame tumeda tähemärgi
+            //        else if (sm0 >= i && i < 90) 
+            //        //kui i on vahemikus sm0 ja 90, 
+            //        {   displayableData += "▓"; } //siis joonistame heleda tähemärgi
+            //        else if (45 >= i && i < sm0)
+            //        //kui i on vahemikus 45 ja sm0, 
+            //        { displayableData += "▓"; } //siis joonistame heleda tähemärgi
+            //        else if ( i >= sm0 && i < 45)
+            //        //kui i on vahemikus sm0 ja 45, 
+            //        { displayableData += "▓"; }//siis joonistame heleda tähemärgi
+            //        else if (i == 45)
+            //        {
+            //            { displayableData += "║"; } //siis joonistame pulga tähemärgi
+            //        }
+            //        else
+            //        // kõikide muude puhul joonistame tumeda tähemärgi
+            //        {   displayableData += "░";   }
+            //        i++;
+            //    }
+            //    Console.WriteLine(displayableData);
+            //}
 
 
             /*
@@ -544,7 +545,25 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                                     //     Komplekssetel andmetüüpidel on tihti vaja sisemiselt üles ehitada ennast
                                                     //     teiste andmetüüpide põhjal.
 
+            
+            
+            /*   -= J U H U A R V =-                  */
+            //
+            // Random klass annab võimaluse programeerijale genereerida pseudo-random väärtusi.
+            Random juhuarv = new Random();      //Klassinimi "Random" on kasutatav kui andmetüüp, mis ütleb et järgnevas muutujas nimega "juhuarv" on
+                                                //uus random tüüpi objekt, mis omistatakse sinna "new Random()" käsuga. Konstruktor ulatab muutuja sisse
+                                                //Random tüüpi klassi. Antud muutuja nüüd ise ei ole see juhuarv, ta toimib kui juhuarvude generaatorina
+                                                //millest punkti abiil saab adresseerida Random genereerimise tööriistu
+            int a = juhuarv.Next();             //.Next() on meetod Random klassis mis on genereeriv meetod juhuarvu genereerimiseks. Seda saab kasutada
+                                                //kui väärtusena, ning ta tagastab suvalise arvu. Ilma parameetrita tagastab andmetüübi maksimaalpiirides
+            int miski = juhuarv.Next(5);        //.Next() ühe paraametriga anname talle ülemise piiri, mille alumine piir on vaikeväärtusena 0
+            int miski2 = juhuarv.Next(-5, 5);   //.Next() kahe parameetriga kirjeldab ära täieliku vahemiku, olgu see siis negatiivne või positiivne
+            double aDbl = juhuarv.NextDouble(); //.NextDouble() annab double-tüüpi väärtusi, parameetri kasutus on identne.
+            long aLng = juhuarv.NextSingle();   //.NextSingle() annab float-tüüpi väärtuse mis on vahemikus 0.0 ja 1.0
+                
+            
             /*   -= K A I T S T U D   S Õ N A D =-                  */
+            
             //
             // Kaitstud sõnad on kindlad nimisõnad/tyegusõnad mida C# kasutab oma koodistruktuuride tähistamiseks
             // Et ära hoida keerukat näpuga jälje ajamist, ning kompilaatori töö lihtsustamist, ei saa järgnevaid sõnu
