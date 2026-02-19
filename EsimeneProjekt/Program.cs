@@ -343,30 +343,92 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //}
             //Console.WriteLine("perekeskmine on " + Math.Round(perekeskmine, 2) + "m. vanematekeskmine on " + Math.Round(vanematekeskmine, 2) + "m.\nlastekeksmine on " + Math.Round(lastekeskmine, 2) + "m. kahe keskmise vahe on " + Math.Round(vahe, 2) + "m.");
 
-            /* näiteülesanne 9 - sünoptiku sõnum*/
+            ///* näiteülesanne 9 - sünoptiku sõnum*/
 
-            // kirjuta programm mis küsib kasutajalt viie järgmise päeva temperatuuri ja ilma kirjeldust
-            // kui sünoptik on sisestused lõpetanud, kuva viis rida, mis kirjeldab viis päeva mõlema omadusega
+            //// kirjuta programm mis küsib kasutajalt viie järgmise päeva temperatuuri ja ilma kirjeldust
+            //// kui sünoptik on sisestused lõpetanud, kuva viis rida, mis kirjeldab viis päeva mõlema omadusega
 
-            Console.WriteLine("Tere sünoptik, ");
-            float[] temps = new float[5]; // temperatuuride massiiv
-            string[] kirjeldused = new string[5]; // kirjelduste massiiv
-            for (int i = 0; i < temps.Length; i++) //võtame sünoptikult temperatuuri andmed ükshaaval
-            {
-                Console.WriteLine("esita palun järgmine temperatuur:");
-                temps[i] = float.Parse(Console.ReadLine());
-            }
-            Console.WriteLine("Ole kirjelda ka eesolev nädal, ");
-            for (int i = 0; i < kirjeldused.Length; i++) //võtame sünoptikult päeva kirjelduse andmed ükshaaval
-            {
-                Console.WriteLine("kirjelda "+(i+1)+". päeva:");
-                kirjeldused[i] = Console.ReadLine();
-            }
-            Console.WriteLine("Palun edasta uudistejaamale ilmateade:");
-            for (int i = 0; i < temps.Length; i++)
-            {
-                Console.WriteLine((i+1)+". päeval on temperatuur " + temps[i]+" kraadi ja ilm on " + kirjeldused[i]+".");
-            } 
+            //Console.WriteLine("Tere sünoptik, ");
+            //float[] temps = new float[5]; // temperatuuride massiiv
+            //string[] kirjeldused = new string[5]; // kirjelduste massiiv
+            //for (int i = 0; i < temps.Length; i++) //võtame sünoptikult temperatuuri andmed ükshaaval
+            //{
+            //    Console.WriteLine("esita palun järgmine temperatuur:");
+            //    temps[i] = float.Parse(Console.ReadLine());
+            //}
+            //Console.WriteLine("Ole kirjelda ka eesolev nädal, ");
+            //for (int i = 0; i < kirjeldused.Length; i++) //võtame sünoptikult päeva kirjelduse andmed ükshaaval
+            //{
+            //    Console.WriteLine("kirjelda "+(i+1)+". päeva:");
+            //    kirjeldused[i] = Console.ReadLine();
+            //}
+            //Console.WriteLine("Palun edasta uudistejaamale ilmateade:");
+            //for (int i = 0; i < temps.Length; i++)
+            //{
+            //    Console.WriteLine((i+1)+". päeval on temperatuur " + temps[i]+" kraadi ja ilm on " + kirjeldused[i]+".");
+            //} 
+
+            ///* näiteülesanne 10 - graafik*/
+            //// andmed mida graafikuna kujutada tahetakse
+            //List<float> graphData = new List<float>()
+            //{
+            //    -3.6f, //negatiivne
+            //    0,     //0
+            //    0,
+            //    -4.5f,
+            //    23.8f, //positiivne
+            //    90f,   //max value
+            //    42.2f,
+            //    -5,2f,
+            //    0,
+            //    0,
+            //    7f,
+            //    6f,
+            //};
+            ////graafiku joonistamise jaoks vajalik keskpunkti asukoht ühes reas
+            //int keskPunkt = 45;
+            ////foreach tsükkel töötleb andmed läbi
+            //foreach (var unitOfData in graphData)
+            //{
+            //    //kuvatav rida, hetkel tühi
+            //    string displayableData = "";
+
+            //    //normaliseeritud andmed keskpunkti suhtes
+            //    float calculatedData = keskPunkt + unitOfData;
+
+            //    //while-tsükli muutuja
+            //    int i = 0;
+            //    while (i < 90) //tsükkel töötab niikaua kuni i ei ole 90 ega suurem
+            //    {
+            //        //sm0 rea alguspunk nmähtavale pulgale, mitte tühjale alale
+            //        int sm0 = (int)(45 + unitOfData);
+
+            //        if (0 >= i && i < sm0) 
+            //        //kui i on vahemikus 0 ja sm0, 
+            //        {   displayableData += "░";   } //siis joonistame tumeda tähemärgi
+            //        else if (sm0 >= i && i < 45) 
+            //        //kui i on vahemikus sm0 ja 45, 
+            //        {   displayableData += "░"; } //siis joonistame tumeda tähemärgi
+            //        else if (sm0 >= i && i < 90) 
+            //        //kui i on vahemikus sm0 ja 90, 
+            //        {   displayableData += "▓"; } //siis joonistame heleda tähemärgi
+            //        else if (45 >= i && i < sm0)
+            //        //kui i on vahemikus 45 ja sm0, 
+            //        { displayableData += "▓"; } //siis joonistame heleda tähemärgi
+            //        else if ( i >= sm0 && i < 45)
+            //        //kui i on vahemikus sm0 ja 45, 
+            //        { displayableData += "▓"; }//siis joonistame heleda tähemärgi
+            //        else if (i == 45)
+            //        {
+            //            { displayableData += "║"; } //siis joonistame pulga tähemärgi
+            //        }
+            //        else
+            //        // kõikide muude puhul joonistame tumeda tähemärgi
+            //        {   displayableData += "░";   }
+            //        i++;
+            //    }
+            //    Console.WriteLine(displayableData);
+            //}
 
 
             /*
@@ -409,7 +471,10 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //bool jahvõiei = false; //kas true või false.
 
             ///*   -= K O M P O S I I T A N D M E T Ü Ü B I D =-   */
-            //1. Massiiv
+            //1. Massiiv    
+            //2. Loend
+            //3. Sõnastik
+            //4. Tuple
 
             /* 1 - MASSIIV */
             // []       -> Massiiv on komposiitandmetüüp, mille sees saab olla mitmeid sama tüüpi lihtandmeid. Massiivi tähistatakse kantsulgudega.
@@ -433,7 +498,99 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                                     //väärtus muutujasse "kuiPaljuOn". Väärtus saab olla ainult täisarv, sest poolikuid või osalisi
                                                     //elemente ei ole olemas.
 
-            ///* Muutuja nime näide: */
+            /* 2 - LOEND */
+            // List<T>   -> Loend on komposiitandmetüüp, kus sarnaselt massiiviga, saab olla mitmeid samat tüüpi andmeid. List kirjutatakse kui oma andmetüüp,
+            //              kus sulgude vahel on loendis olevate individuaalsete elementide andmetüüp. Samamoodi nagu massiive, saab loendeid olla ükskõik
+            //              millist lihtandmetüüpi ja komposiitandmetüüpi (isegi kui see on teine list). Erinevalt massiivist aga ei pea ütlema kui pikk loend
+            //              ise on, massiivis tuleb see ette öelda. Loendi eripära on see, et teda saab dünaamiliselt oma pikkusel muuta, see tähendab et
+            //              elemente saab eemaldada koos selle elemendi asukohaga. Massiivi puhul nii teha ei saa sest massiiv on konstantse ehk
+            //              muutumatu pikkusega. Listi üksikelemendi andmetüüp asub noolsulgude vahel "<>" kaitstud sõna "List" järel.
+            // Esimene tekitusviis:
+            List<int> arvuLoend = new List<int>(); //Andmetüübi kirjeldus "List<>" näitab et tegu on loendiga, Listi noolsulgude vahel, on loendis olevate
+                                                   //andmete andmetüüp, antud juhul on siin täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid
+                                                   //hoitakse on "arvuLoend". Sellesse muutujasse omistatakse kaitstud sõna "new" abil uus, PIKKUSETA ja tühi
+                                                   //loend täisarvudega. 
+            // Teine tekitusviis:
+            List<int> arvuLoend2 = new List<int>() {1,2,3};     //Teine loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga,
+                                                                //Listi noolsulgude vahel, on loendis olevate andmete andmetüüp, antud juhul on siin
+                                                                //täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid hoitakse on "arvuLoend2". Sellesse
+                                                                //muutujasse omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega, kuid
+                                                                //pärast andmetüübi taga olevaid sulge, anname loogeliste sulgude vahel talle kaasa kohe
+                                                                //ka elemendid. Antud juhul on tegu täisarvudega 1, 2 ja 3. Enam ei ole tegu PIKKUSETA EGA
+                                                                //TÜHJA loendiga, vaid sarnaselt massiivile, tekib selle loendi pikkus, põhinedes sellele
+                                                                //mitu elementi on kaasa antud.
+            // Kolmas tekitusviis:
+            List<int> arvuLoend3 = new List<int>(3);        //Kolmas loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga, Listi
+                                                            //noolsulgude vahel, on loendis olevate andmete andmetüüp, antud juhul on siin täisarvud, ehk
+                                                            //"int". Muutuja enda nimeks, kus andmeid hoitakse on "arvuLoend2". Sellesse muutujasse
+                                                            //omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega kuid loend omab kolme
+                                                            //tühja elementi. Elementide arv sätestakase peale noolsulge olevate tavaliste sulgude vahele.
+                                                            //Arve, ega väärtusi, nende elementide sees veel ei ole.
+
+            /* 3 - SÕNASTIK */
+            //Dictionary<T, T>      ->  Dictionary on komposiitandmetüüp mis omab võtiväärtuspaare. Erinevalt eelnevatest komposiitandmetüüpidest, saab
+            //                          Dictionary omada kahte erinevat andmetüüpi millest esimene väljendab võtme andmetüüpi ning teine võtme taga olevat
+            //                          väärtuse andmetüüpi. Need andmetüübid saavad üksteisest erineda või isegi omada klasse andmetüüpidena ning ka
+            //                          muid komposiitandmetüüpe.
+            // Esimene tekitusviis:
+            Dictionary<int,string> sõnastik = new Dictionary<int, string>();
+            //Andmetüübi kirjeldus "Dictionary<>" näitab et tegu on sõnastikuga, ehk loendiga võtiväärtuspaaridest. Dictionary noolsulgude vahel asetatakse
+            //kaks andmetüüpi, esimene neist on võtme andmetüüp (antud juhul "int") teine neist on võtme taga oleva väärtuse andmetüüp (antud juhul "string").
+            //Muutuja nimeks on "sõnastik" kuhu omistatakse käsusõnaga "new" uus tühi sõnastik vastavate andmetüüpidega.
+
+            // Teine tekitusviis:
+            Dictionary<int,string> sõnastik2 = new Dictionary<int, string>() { { 1, "astelpaju" },{ 2, "muulukas" },{ 3, "maasikas" } };
+            //Andmetüübi kirjeldus "Dictionary<>" näitab et tegu on sõnastikuga, ehk loendiga võtiväärtuspaaridest. Dictionary noolsulgude vahel asetatakse
+            //kaks andmetüüpi, esimene neist on võtme andmetüüp (antud juhul "int") teine neist on võtme taga oleva väärtuse andmetüüp (antud juhul "string").
+            //Muutuja nimeks on "sõnastik" kuhu omistatakse käsusõnaga "new" uus sõnastik koos elementidega, mis asuvad sulgude taga olevates loogelistes
+            //sulgudes ja iga element ise on veel omakorda loogelistes sulgudes infoga mis vastab dictionary andmetüüpide sätestusele.
+
+            //Sõnastiku tööriistad:
+            sõnastik.Add(4, "tikker" );         //.Add() võimaldab olemasoleva sõnaraamatu lõppu lisada elementi. Sulgude vahel on andmed, mille andmetüübid
+                                                //vastavad täiendatava sõnastiku andmetüüpide sätestusega.
+            sõnastik.Remove(2);                 //.Remove() eemaldab kindla võtme järgi sõnastikus oleva elemendi. Sulgude vahel on selle võtme
+                                                //andmetüübile vastav väärtus mitte võtme taga oleva väärtuse väärtus.
+            sõnastik.Clear();                   //.Clear() teeb sõnastiku täielikult tühjaks.
+
+            sõnastik.ContainsKey(4);            //.ContainsKey() tagastab kas "true" või "false" vastavalt sellele kas ta leiab antud sõnastikust parameetrina
+                                                //kaasa antud võtme.
+            sõnastik.ContainsValue("tikker");   //.ContainsValue() tagastab kas "true" või "false" vastavalt sellele kas ta leiab antud sõnastikust parameetrina
+                                                //kaasa antud väärtuse.
+
+            /* 4 - MITMIK/HULK  */
+            // Andmetüübi kirjeldus "Tuple<>" näitab et siin on tegu erinevate andmete hulgaga ehk mitmikuga. Tuple noolsulgude vahele asetatakse kõik soovitud
+            // vajadusel erinevad andmetüübid mis väljendavad tupli sees väljenduvate andmete asukohtade andmetüüpe. Kui esimene andmetüüp on string, siis
+            // Tuple esimene objekt on string tüüpi andmed, kui teine andmetüüp on List<int[]> hoitakse teises objektis loendeid mille sees on massiivid
+            // täisarvudega. Just nagu kõik teised komposiitandmetüübid, võtab ka Tuple vastu kõiki andmetüüpe, kaasaarvatud iseennast. Erinevalt teistest
+            // komposiitandmetüüpidest, ei saa ühte Tuple elementi kohapeal muuta, vaid kogu Tuple tuleb protsessi käigus rekombineerida muudetud andmetest
+            // ja olemasolevatest andmetest uuesti.
+            Tuple<string, string> piparmündiTupla = new Tuple<string, string>("vasak tupla", "parem tupla");
+
+            // Esimene tekitusviis:
+            Tuple<bool, int, string> someTuple = new Tuple<bool, int, string>( true, 1, "abc" );
+            //Andmetüüvbi kirjeldus "Tuple<>" ütleb et selles muutujas on mitmik. Selles mitmikus on esimeseks bool teiseks int ja kolmandaks string tüüpi
+            //objektid. Tuple vajab ka kohe esmast omistust, seega kaitstud sõna new ja andmetüübi täiskirjeldus "Tuple<bool, int, string>" vajab peale sead
+            //sulgude vahele esmaseid andmeid. Antud juhul on siin ( true, 1, "abc" );
+
+            //Tuple töötlemine:
+            // Ütleme et on olemas ülaltoodud piparmündiTupla. See on Tuple. Justnagu päris tupla, tahame sealt ühe ära süüa. ehk asendada ühe kahest objektist
+            // uue sõnega mis loeks "NJÄM NJÄM NJÄM".
+            //Tuplet ei saa muuta, aga seda saab rekombineerida, seega me saame teha nii:
+            string uuspool = "NJÄM NJÄM NJÄM";
+            piparmündiTupla = new Tuple<string, string>(piparmündiTupla.Item1,uuspool);
+
+            //Tuple adresseerimine:
+            // justnagu eelnevalt näidatud, me sasame adresseerida tuple erinevaid objekte siiski eraldi. Selle jaoks on iga tekitatud Tuple sees genereeritud
+            // muutujad ".Item#" millega me saame adresseerida soovitud objekti.
+            // NB! erinevalt loendist ja massiivist, algab lugemine arvust 1. ehk esimene Item ei ole Item0 vaid Item1.
+            string pool1 = piparmündiTupla.Item1; // siin asetame muutujasse "pool1" valitud tuplest esimese objekti, ning
+            string pool2 = piparmündiTupla.Item2; // seal asetame muutujasse "pool2" valitud tuplest teise objekti
+
+
+
+
+
+            /*   -= M U U T U J A   N I M E T A M I N E            */
             ////string string = "abc"; //is bäd
             //string sõne = "abc"; //is gud
 
@@ -445,6 +602,28 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                    // 3 - omistusoperaator mis annab muutujale andmed sisse
                                    // 4 - andmed mida omistatakse
                                    // 5 - lauselõpumärk
+
+            //                    6
+            List<bool> näidis2 = new List<bool>();  // 6 - Kaitstud sõna "new" kasutatakse siis kui tahetakse instantsieerida uude muutujasse
+                                                    //     väärtust mille andmetüüp on kompleksne, ja vajab konstruktori väljakutset.
+                                                    //     Komplekssetel andmetüüpidel on tihti vaja sisemiselt üles ehitada ennast
+                                                    //     teiste andmetüüpide põhjal.
+
+            /*   -= J U H U A R V =-                                */
+            //
+            // Random klass annab võimaluse programmeerijale genereerida pseudo-random väärtusi.
+            Random juhuarv = new Random();      //Klassinimi "Random" on kasutatav kui andmetüüp, mis ütleb et järgnevas muutujas nimega "juhuarv" on
+                                                //uus random tüüpi objekt, mis omistatakse sinna "new Random()" käsuga. Konstruktor ulatab muutuja sisse
+                                                //Random tüüpi klassi. Antud muutuja nüüd ise ei ole see juhuarv, ta toimib kui juhuarvude generaatorina
+                                                //millest punkti abil saab adresseerida Random genereerimise tööriistu.
+            int a = juhuarv.Next();             //.Next() on meetod Random klassis mis on genereeriv meetod juhuarvu genereerimiseks. Seda saab kasutada
+                                                //kui väärtusena, ning ta tagastab suvalise arvu. Ilma parameetrita tagastab andmetüübi maksimaalpiirides
+                                                //mingisuguse juhuarvu
+            int miski = juhuarv.Next(5);        //.Next() ühe parameetriga anname talle ülemise piiri, mille alumine piir on vaikeväärtusena 0
+            int miski2 = juhuarv.Next(-5, 5);   //.Next() kahe parameetriga kirjeldab ära täieliku vahemiku, olgu see siis negatiivne või positiivne
+            double aDbl = juhuarv.NextDouble(); //.NextDouble() annab double-tüüpi väärtusi, parameetri kasutus on identne.
+            float aLng = juhuarv.NextSingle();  //.NextSingle() annab float-tüüpi väärtuse mis on vahemikus 0.0 ja 1.0.
+            
 
             /*   -= K A I T S T U D   S Õ N A D =-                  */
             //
@@ -659,6 +838,27 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                                         //järgmist/mingindat arvu.
                 arvuMassiiv[k] = int.Parse(Console.ReadLine());//Kasutades tsüklimuutujat, täidetakse massiiv.
             }
+
+            /*   -= T S Ü K L I D    FOREACH =-                      */
+
+            //Foreach tsükkel, võrreldes for-tsükliga, ei oma mitut parameetrit, vaid kindlat kollektsiooni kontrollivat tingimust, koos iga elemendi
+            //jaoks tekitatava ajutise muutujaga. Foreach tsükkel käib ainult niikaua kuni elemendid pole otsa saanud. Foreach tsükli tööd saab kontrollida
+            //ainult läbi selle töödeldava kollektsiooni enda, st seda et tsüklimuutuja on kollektsiooni elementide arv, selle tsükli jaoks EI TEKITATA
+            //eraldi muutujat.
+
+            List<string> sõnad = new List<string>() {"maasikas","muulukas","mustikas" }; //Muutuja, kus on andmed, mida tsükkel läbi töötleb.
+            foreach (var üksSõna in sõnad)      //Kaitstud sõna "foreach" alustab foreach tsükli, pärast mida on sulud mille vahel on tsükli tööd
+                                                //kontrolliv tingimus. Selle tingimuse sees tekitatakse ajutine muutuja andmetüübiga "var" 
+                                                //töödeldava andmekogumi üksikelemendi jaoks. Tingimuse keskel on teine kaitstud sõna "in" mis
+                                                //kontrollib, et tsükkel töötaks selle elemendi jaoks. Peale ühte ringi, vaadatakse kas elemente on järgi
+                                                //kui on, omistatakse muutujasse "üksSõna" järgmine element, ning tsükkel käib veel ühe ringi. Kui aga
+                                                //elemente rohkem ei ole, tsükkel lõppeb. Tsükli tööd saab kontrollida näiteks kontrollitava kollektsiooni
+                                                //suurendamisega. Tsüklil ei ole tsüklimuutujat, kuna kollektsiooni järgi tsükkel töötab.
+                                                //Peale sulge on koodiplokk "{}" mille sees mingi tegevus tehakse.
+            {
+                Console.WriteLine(üksSõna);     //Antud juhul, kuvatakse element välja.
+            }
+            //NB - Tsükli töö ei pea olema üldse seotud kontrollitava kollektsiooniga. Kollektsioon ise võib olla ainult tsüklimuutuja eesmärgil sätestatud.
         }
     }
 }

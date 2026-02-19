@@ -2,8 +2,6 @@
 {
     internal class Program
     {
-        public static int Nipitiri { get; private set; }
-
         static void Main(string[] args)
         {
             //1. kirjuta programm, mis
@@ -63,58 +61,6 @@
             //programm kontrollib IF abil, kas  ajakulu on 35h või suurem
             //kui on suurem, kuva hoiatus "sinu mängimisele kulub peaaegu samasugune aeg nagu tavalisel inimesel töönädalas töötamisele"
             //kui on väiksem, ära tee midagi.
-
-            
-            /* Ülesanne 3 */
-            //Console.WriteLine("Mis on sinu viimased mängimis tundid?");
-            //float tunde = float.Parse(Console.ReadLine());
-            //if (tunde < 0.00)
-            //{
-            //    Console.WriteLine("kahju et sul aega mängida pole :c");
-            //}
-            //else if (tunde <= 10 && tunde >= 0)
-            //{
-            //    Console.WriteLine("mõõdukas mängija, tubli");
-            //}
-            //else if (tunde <= 20 && tunde >= 10)
-            //{
-            //    Console.WriteLine("natuke paljuks läheb, kodutööd kannatavad");
-            //}
-            //else if (tunde <= 40 && tunde >= 20)
-            //{
-            //    Console.WriteLine("liiga palju mängid, kas sa kooli üldse nii jõuad?");
-            //}
-            //else if (tunde <= 999 && tunde >= 40)
-            //{
-            //    Console.WriteLine("siin peaks juba sekkuma psühholoog");
-            //}
-
-            //Console.WriteLine("Mis on sinu viimased jalgpallimängu tulemust?");
-            //float Punkt = float.Parse(Console.ReadLine());
-            //if (Punkt < 0)
-            //{
-            //    Console.WriteLine("PUDRUJALG OLED VÄ!?!");
-            //}
-            //else if (Punkt <= 1 && Punkt >= 0)
-            //{
-            //    Console.WriteLine("täitsa OK");
-            //}
-            //else if (Punkt <= 1 && Punkt >= 2)
-            //{
-            //    Console.WriteLine("no see juba on parem");
-            //}
-            //else if (Punkt <= 2 && Punkt >= 3)
-            //{
-            //    Console.WriteLine("WOWOWOWO MESSI MESSI MESSI");
-            //}
-            //else if (Punkt <= 999 && Punkt >= 40)
-            //{
-            //    Console.WriteLine("ei tunne sellist skoori, see liiga suur minu jaoks");
-            //}
-
-
-
-
         }
     }
 }
