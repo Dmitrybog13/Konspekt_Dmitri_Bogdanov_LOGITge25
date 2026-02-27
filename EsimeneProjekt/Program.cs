@@ -469,6 +469,111 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //var x = 123; //Umbmäärase andmetüübiga ajutine muutuja
             //var y = "ABC";
             //bool jahvõiei = false; //kas true või false.
+            //void - On andmetüüp, mida muutuja tekitamisel kasutada ei saa, kasutatakse ainult meetodite signatuurides väljendamiseks et meetod ei
+            //       tagasta midagi.
+
+            ///*   -= S Õ N E T Ö Ö R I I S T A D =-               */
+            // Sõnetööriistad on tekstilise andme töötluseks tööriistad mis teevad kasutajale mingid tegevused ära, või tuvastavad midagi.
+            // Neid on vaja tihtipeale programmi sisendi standardiseerimiseks, ning kasutaja sisestusvigade vältimiseks.
+
+            /* Töötlevad meetodid */
+            string minuLause = "   täna hOMMIkul jõin ära terve ploki moNSterit, aga üles ei ärganud, tahan veel magada   ";
+            Console.WriteLine(minuLause.Length);                //Sõne tööriist .Length tagastab selle sõne pikkuse.
+            Console.WriteLine(minuLause.ToUpper());             //Sõne meetod .ToUpper() muudab sõnes olevad tähed suurteks tähtedeks
+            Console.WriteLine(minuLause.ToLower());             //Sõne meetod .ToLower() muudab sõnes olevad tähed väikesteks tähtedeks
+            string tuvastus = "Kas lauses on sõna 'monsterit'?:" + minuLause.ToLower().Contains("monsterit");
+                                                                //Contains tagastab true või false, olenevalt sellest kas objekt sisaldab otsitavat
+            bool tuvastus2 = minuLause.StartsWith("täna");      //StartsWith tagastab true või false, olenevalt sellest kas objekt algab otsitavaga
+            bool tuvastus3 = minuLause.EndsWith("magada");      //EndsWith tagastab true või false, olenevalt sellest kas objekt lõppeb otsitavaga
+            Console.WriteLine(tuvastus);                
+            Console.WriteLine(minuLause.Trim());                //Trim eemaldab algusest ja lõpust tühjad tähed nagu space ja reavahetus
+            string[] lauseOsad = minuLause.Split(' ');          //Split() tükeldab sõne osadeks, selle tähemärgi pealt mis parameetriks seatud on
+            foreach (var osa in lauseOsad)
+            {
+                Console.WriteLine(osa);
+            }
+            bool isBig = false;
+            for (int i = 0; i < lauseOsad.Length; i++)
+            {
+                if (isBig == true)
+                {
+                    lauseOsad[i] = lauseOsad[i].ToUpper();
+                }
+                else
+                {
+                    lauseOsad[i] = lauseOsad[i].ToLower();
+                }
+                isBig = !isBig;
+            }
+
+            /* Konkatenatsiooni võimalused */
+            string töödeldudLause = string.Join(' ', lauseOsad);//.Join() liidab stringid kokku üheks lauseks, võttes parameetriks tähe char
+                                                                //ja liidetavad elemendid loendina.
+            Console.WriteLine(töödeldudLause);
+
+            // + on kahe stringi vahel konkateneerimisoperatsioon, mitte matemaatiline tehe, ning liidab eelmise stringi lõppu järgmise
+            // stringi tema algusest et neid kahte ühendada
+            List<string> menüü = new List<string>() {"kiluvõileib","vastlakukkel","hernesupp" };
+            string väljundLause = "Need on meie menüüs: ";
+            foreach (var söök in menüü)
+            {
+                väljundLause += " "+söök+",";
+            }
+            Console.WriteLine(väljundLause);
+
+            //.ConCat() on spetsiifiline meetod, millega saab mitu string-tüüpi parameetrit ühendada üheks stringiks.
+            string eesnimi = "Julius";
+            string perekonnanimi = "Caesar";
+            string amet = "noahoidik";
+            string kuulusKeiser = string.Concat(eesnimi, perekonnanimi, amet);
+            Console.WriteLine(kuulusKeiser);
+
+            //"$" dollarimärk on viis kuidas keset stringi kasutada muutujates olevaid väärtusi, ilma nende tahtliku teisenduseta. Ehk tegu on
+            //formateeritud stringiga
+            string kuulusKeiser2 = $"{eesnimi} {perekonnanimi} oli maailma kuulsaim {amet}";
+            Console.WriteLine(kuulusKeiser2);
+
+            /* Escape character teksti vormindamiseks \ */
+            Console.WriteLine("A \n B");                    // \n tekitab sõnes reavahetuse
+            Console.WriteLine(" \\ ");                      // \\ kuvab teksti sisse "\"
+            Console.WriteLine("1\t2");                      // \t tekitab teksti vahele TAB operatsiooni, ehk neli/kaheksa vahet korraga
+            Console.WriteLine("AaF\ba");                    // \b kustutab \ble eelneva tähe kui \b on keset sõne.
+            Console.WriteLine(" \" ");                      // \" kuvab teksti sisse '"'
+            Console.WriteLine(" \' ");                      // \" kuvab teksti sisse "'"
+            Console.WriteLine("|"+amet.PadLeft(30)+"|");    //.PadLeft() ja .PadRight lisavad vastavalt vasakule poole või paremale poole sõnest tühimikke
+            Console.WriteLine("|"+amet.PadRight(30)+"|");   // kuni parameetris asuva arvuni. kui sõne on pikem kui parameeter, ei lisata midagi
+            Console.WriteLine("""                           
+                                [Verse 1]
+                We're talking away
+                No, I don't know what I'm to say
+                I'll say it anyway
+                Today is another day to find you
+                Shyin' away
+                I'll be comin' for your love, okay?
+
+                [Chorus]
+                Take on me (Take on me)
+                Take me on (Take on me)
+                I'll be gone
+                In a day or two
+                """);                                       // Kolm jutumärgipaari on sõne eraldi väljendusviis, mis hoiab sisendandmete vorminduse
+                                                            // alles, kõik reavahetused mis on, kõik jutumärgid, jne ilma "\" vajamata.
+
+            /* Stringi elementide adresseerimine */
+            //kuna string on massiiv tähtedest, siis saab stringi elemente/tähti adresseerida nagu tavalist massiivi.
+            foreach (var täht in perekonnanimi)
+            {
+                Console.WriteLine(täht);
+            }
+            for (int i = 0; i < perekonnanimi.Length; i++)
+            {
+                Console.WriteLine(perekonnanimi[i]);
+            }
+
+            //sarnaselt massiivile saab ka elemndi sisu järgi .IndexOf meetodiga teada esimese vastava elemendi indeksit/asukohta massiivis.
+            Console.WriteLine(perekonnanimi.IndexOf("r")); 
+
+            //Console.ReadLine();
 
             ///*   -= K O M P O S I I T A N D M E T Ü Ü B I D =-   */
             //1. Massiiv    
@@ -493,10 +598,13 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                             //elementide arvust.
 
             // - - Massiivi sisemised meetodid - -
-            int kuiPaljuOn = uusMassiiv.Length;     //Massiivi meetod "Length" mille saame kasutusele võtta/adresseerida punkti abil. Loendab kokku
-                                                    //mitu elementi massiivis on ja tagastab selle väärtuse. Selles näites omistatakse tagastatav
-                                                    //väärtus muutujasse "kuiPaljuOn". Väärtus saab olla ainult täisarv, sest poolikuid või osalisi
-                                                    //elemente ei ole olemas.
+            int kuiPaljuOn = uusMassiiv.Length;         //Massiivi meetod "Length" mille saame kasutusele võtta/adresseerida punkti abil. Loendab kokku
+                                                        //mitu elementi massiivis on ja tagastab selle väärtuse. Selles näites omistatakse tagastatav
+                                                        //väärtus muutujasse "kuiPaljuOn". Väärtus saab olla ainult täisarv, sest poolikuid või osalisi
+                                                        //elemente ei ole olemas.
+            int kasOn = Array.IndexOf(uusMassiiv, 2);   //Massiivi meetod "IndexOf" mille saame kasutusele võtta punkti abil andmetüübist endast võtab
+                                                        //sisse kaks parameetrit, massiivi enda ja otsitava elemendi, ja tagastab meile indeksi kus
+                                                        //ESIMENE vastav element asub. -1 kui ei leita, 0 kui on tühi.
 
             /* 2 - LOEND */
             // List<T>   -> Loend on komposiitandmetüüp, kus sarnaselt massiiviga, saab olla mitmeid samat tüüpi andmeid. List kirjutatakse kui oma andmetüüp,
@@ -859,6 +967,132 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                 Console.WriteLine(üksSõna);     //Antud juhul, kuvatakse element välja.
             }
             //NB - Tsükli töö ei pea olema üldse seotud kontrollitava kollektsiooniga. Kollektsioon ise võib olla ainult tsüklimuutuja eesmärgil sätestatud.
+        }
+            /*   -= M E E T O D I D =-                               */
+
+        //Meetodid on väljakutsutavad koodijupid või alamprogrammid. Meetodid teostavad tavaliselt mingeid spetsiifilisi funktsioone või tegevusi.
+        //Meetodid lasevad programmeerijal taaskasutada oma eelnevalt kirjutatud koodi - write once use many.
+        //Meetodeid on kahte liiki - Ühed, mis tagastavad mingisuguse töö või tegevuse tagajärjel või muu tulemuse saavutamisel andmeid, ja teised
+        //mis ei tagasta midagai, kuid omavad siiski mingit tegevust.
+
+        //Meetodi anatoomia:
+        //Meetodi olemus sisaldab endas kolme vajalikku komponenti. Meetodi enda omadused ja nimi, parameetrid ning meetodi kood ise.
+        //Meetodi omadused ja nimi ning parameetrid moodustavad meetodi signatuuri, ning sellele järgneb loogelistes sulgudes {}
+        //koodiplokk mida vastav meetod väljakutsel täidab.
+
+        //Meetodi signatuur on kõige esimene rida, mis meetodi tekitamiseks kirjutatakse, ning mis kirjeldab meetodit ennast ja selle omadusi
+        //Signatuur aga koosneb ise ka mitmest või kõigist järgnevatest. Nendeks on juurdepääsu modifikator, tagastustüüp, meetodi enda nimi,
+        //olenevalt liigist ka parameetrid sulgude vahel () ja peale signatuuri koodiplokk.
+
+        //   A  - Juurdepääsu modifikaator ütleb ära kust ja kuyidas seda meetodit välja kutsuda või adresseerida saab. Tähtsamaid neist on 4-5 tükki:
+        // 0. ---------     - Modifikaatori puudumisel kompilaator annab meetodile sobiva variandi automaatselt.
+        // 1. "public"      - meetod on avalik ja kättesaadav ka teistes klassides, peale selle klassi/projekti kus meetod ise asub.
+        // 2. "private"     - meetod on kättesaadav ainult selles klassis kus meetod ise asub.
+        // 3. "protected"   - meetod on kättesaadav klassis kus ta asub ning kõikides klassides mis päriluse kaudu omab selle klassi andmeid.
+        // 4. "internal"    - meetod on juurdepääsetav ainult projektis kus ta asub. Samas projektis saavad teised klassid seda kasutada, aga
+        //                  mitte projektist väljaspool asuvad klassid.
+        // 5. "static"      - Meetodit on ainult üks.
+
+        //   B  - Tagastustüüp on meetodi omadus, mis ütleb ära millise tüübiga andmeid meetodi väljakutsumise asukohta tagastatakse, kui üldse.
+        // Andmetüüp mida tagastatakse võib olla ükskõik milline liht- või kombinatsioonandmetüüp. Aga kui meetod ei tagasta üldse andmeid, on
+        // selle meetodi enda andmetüüp "void". Kui meetodil on tagastustüüp mis on midagi muud kui void, on meetodi sees iga toimiva koodisuuna
+        // lõpus kaitstud sõna "return", return ütleb, et just see asi on vaja tagastada. Peale returni on alati tagastatavad andmed või muutuja
+        // mis sisaldab tagastatavaid andmeid. Olenevalt meetodist saab tagastuseks olla ka tegevus. Need andmed antakse tagasi sinna kust meetod
+        // kutsuti, ning peale sõna return muud koodi ei täideta. Return katkestab meetodi töö.
+
+        //   C  - Meetodi enda nimi on midagi mille järgi arendaja meetodit kasutab. Nimi omab samat funktsiooni nagu näiteks muutuja nimi mille
+        // sees on muutuja andmed. Meetodi nime kirjutamisel või väljamõtlemisel võiks meetodi nime kirjutada tegevuse järgi mida meetod teeb, 
+        // mitte kus ta käib ega mõni muu kõrvaline või arusaamatu asi. Näide: Kui arendaja kirjutab meetodi nimega "A()", siis see meetodi nimi
+        // ei ütle ta meeskonnakaaslasele/talle endale tulevikus mitte midagi, aga meetodi nimi "ArvutaArvudKokku()" ütleb selgelt ära, mille
+        // jaoks meetod on. Ta ei raiska oma aega meetodi sisse vaatamiseks, et lugeda koodi ning ise nuputada mida meetod teeb.
+
+        //   D  - Parameetrid on väljad mis ütlevad mida meetodil meetodi tööks vaja on, ning mis on vaja sulgude vahele lisada meetodi
+        // väljakutseasukohas. Parameetri muutuja nimi võib olla väljendatud teistmoodi kui selle meetodiga kasutatavad andmed ise.
+        // Parameetreid on kahte sorti, kohustuslikud ja optional ehk valikuline. Valikulise parameetri väljendusel pannakse andmetüübi taha
+        // küsimärk. On olemas ka vaikeväärtusega parameetrid, kus muutujale, väärtuse puudumisel antakse signatuuris mingisugune väärtus ette ära.
+
+        // 1. tüüpi meetod - ei tagasta andmeid:
+
+        // A      A     B       C   D
+        public static void UusMeetod()  //Meetodi signatuur: omab juurdepääsumodifikaatorit "public", asub selles klassis, ning tagastustüüp on void.
+                                        //Pärast omadusi on meetodi nimi "UusMeetod" peale mida on sulud "()" mille vahel parameetreid määratud ei ole.
+        {                               //Peale signatuuri on koodiplokk
+            Console.WriteLine("Tere");  //Kus kuvatakse kasutajale tekst "Tere"
+        }
+
+        // 2. tüüpi meetod - tagastab mingisuguse väärtuse või mingeid andmeid:
+        int[] arvutatavadArvud = new int[] {67,69,420,9001 }; //Töödeldavad andmed, mis asuvad täisarvumassiivis *VÄLJASPOOL* meetodit.
+        // A      A    B       C         D
+        public static int ArvutaKokku(int[] arvud)  //Meetodi signatuur: omab juurdepääsumodifikaatorit "public", asub selles klassis, tagastustüüp
+                                                    //"int" ütleb et meetod tagastab andmeid üksiku täisarvuna. Meetodi nimi on "ArvutaKokku", ning
+                                                    //meetodile on antud üks kohustuslik parameeter arvumassiiv mille muutuja nimi meetodi sees on
+                                                    //"arvud"
+        {
+            //meetodi sisu arvutab järjendis olevad arvud foreachi ja += omistusoperatsiooniga kokku muutujasse "summa"
+            int summa = 0;
+            foreach (var arv in arvud)
+            {
+                summa += arv;
+            }
+            return summa; //ning meetodi lõpus, kasutades kaitstud sõna "return" tagastab muutujas "summa" oleva väärtuse.
+        }
+
+        //Meetodi väljakutse:
+        //Hetkel käivitatud koodis, kutsutakse meetod välja ainult tema nimepidi + vajalikud parameetrid (kui neid on)
+        //
+        //  /.mingi muu kood./
+        //
+        //  ArvutaKokku(arvutatavadArvud)
+        //
+        //  /.mingi muu kood./
+        //
+        // Erinevalt kõigest muust, ei ole meetodi näidis konspektis funktsioneeriv.
+
+        /* Valikuline ja kohustuslik parameeter */
+        public void MillineTekst(int vanus, int? pikkus) //Meetodi signatuuris kus on parameetrid on asetatud üks kohustuslik parameeter "vanus", ja üks
+                                                         //valikuline parameeter "pikkus". Valikulist parameetrit tähistatakse peale andmetüüpi oleva
+                                                         //küsimärgiga. Küsimärk ütleb, et muutujas olev väärtus on nullable, ehk meetod otseselt ei vaja seda
+                                                         //ta *võib* olemas olla.
+        {
+            int arv = (int)pikkus;                       //kui non-nullable muutujasse väärtustada nullable muutujast väärtus, on vajalik ka castimine.
+            if (vanus < 18)
+            {
+                Console.WriteLine("Kõtt, alakaid ei taha");
+            }
+            else if (vanus >= 18)
+            {
+                if (pikkus != null)
+                {
+                    if (pikkus <= 170)
+                    {
+                        Console.WriteLine("Saad juua ainult 2 liitrit monsterit");
+                    }
+                    else if (pikkus <= 200)
+                    {
+                        Console.WriteLine("Saad juua kuni 4 liitrit monsterit");
+                    }
+                }
+                else 
+                {
+                    Console.WriteLine("Saad juua 2 liitrit monsterit");
+                }
+            }
+        }
+
+        /* parameetrite vaikeväärtus */
+        public string KeskmineTase(float veetase = 1.5f)    //Meetodi signatuuris on asetatud sulgude vahele üks parameeter "veetase" mille taga on võrdusmärk
+                                                            //väärtusega. Meetodi signatuuris ütleb võrdusmärk, et tegu on väikeväärtusega, ning kui meetodile
+                                                            //ei anta kaasa sissetulevat väärtust, arvestatakse et väärtuseks on sulgude taga olev anne.
+                                                            //Antud juhul 1.5f
+        {
+            if (veetase > 1.5)
+            {
+                return "liiga kõrge";
+            }
+            else
+            {
+                return "normaalne";
+            }
         }
     }
 }
