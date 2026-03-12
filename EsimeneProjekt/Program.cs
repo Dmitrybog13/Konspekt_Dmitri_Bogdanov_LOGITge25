@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 using System.Text; //<-- enne nimeruumi, viidatakse selles failis/klassis kasutatud pakettidele/moodulitele ja süsteemi muudele osadele
 //süsteemi muuks osaks võib olla kas operatsioonisüsteemi võimalused või ka teised projektid. Teised projektid viidatakse tavaliselt solution (.sln)
 //failist.
@@ -8,6 +7,68 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
 {
     internal class Program //<-- programmi klass, mis on ka omakorda konteiner tüüp, Kus sees on kogu programmi kood 
     {
+        /* 5 - STRUKTUUR */
+        // Struct/Struktuur on komposiitandmetüüp, mis sarnaneb klassiga sellepoolest, et erinevalt kõikidest teistest andmetüüpidest, saab
+        // struktuur sisaldada meetodeid ning omadusi. Sarnaselt klassiga, on Struct andmetüübil ka konstruktor, mis ütleb mis selle
+        // struktuuri sees on.
+
+        // Struct anatoomia:
+        // A - Structi jaoks vajalik nimeruumi tekitamine, mis sarnaselt meetodile vajab juurdepääsu modifikaatorit (A.1), andmetüübi nime (A.2) ja
+        //      sätestust et tegu on structiga (A.3). Sätestusele järgneb koodiplokk/konteiner.
+        // B - Konstruktor (on sama nagu klassil) ning defineerib ära spetsiaalse meetodi mis ütleb kuidas *see* struct instantsieeritakse.
+        //      Konstruktorit kasutatakse antud juhul siis structis olevatele väljadele mingite algandmete sisestuseks. Konstruktoreid saab olla mitu.
+        //      "Kordinaat" structil on kaks konstruktorit, esimene kolmemõõtmeline, teine kahemõõtmeline (B.1)
+        // C - Andmeväljad ütlevad ära, millised andmed uuel structil on. Olenevalt konstruktorist võib andmevälju olla rohkem või vähem, või
+        //      omada täielikult erinevaid välju.
+        // D - Struktuuri omadused, nende kaudu saab kasutatavas koodis selle struktuuri andmeid kätte. Adresseeritakse nagu meetodeid teistest
+        //      andmetüüpidest punkti abil, ning peale punkti saab valida soovitud välja.
+        //      "Get();" (D.1) on vaikemeetod, mis tagastab välja andmed ning "Set();" (D.2) laseb seda seada.
+        //      Structi omadusele saab anda vaikeväärtuse. Vaikeväärtus on midagi mis antakse
+        //      selle structi tüüpi uuele objektile kaasa, selle objekti tekitamise hetkel, kui
+        //      ei ole sellele väljale väärtust antud.(D.3)
+        // E - Struktuuris asuvad meetodid, saab kirjutada üle overrideiga vaikemeetodeid või saab omada struktuurile omaseid meetodeid
+
+        // A.1  A.2   A.3
+        public struct Kordinaat //A
+        {
+            public Kordinaat(double x, double y, double z) //B Kui andmeid ei anta kaasa, siis vaikeväärtusena kasutatakse kõige esimest konstruktorit.
+            {
+                X = x; //C selles konstruktoris on kolm andmevälja
+                Y = y;
+                Z = z;
+            }
+            public Kordinaat(double x, double y) // B.1
+            {
+                X = x; //C selles konstruktoris on kaks andmevälja
+                Y = y;
+            }
+
+            //                D.1  D.2
+            public double X { get; set; } //D - struktuuri omadused
+            public double Y { get; set; }
+            public double Z { get; set; } = 0;//D.3
+            //E selle "Kordinaat" struct meetodid:
+            public override string ToString() 
+            {
+                return $"({X},{Y},{Z})";
+            }
+            public void HelloWorld()
+            {
+                Console.WriteLine("Tere maailm.");
+            }
+        }
+
+        /* 6 - ENUM */
+        // Enum on spetsiaalset tüüpi klass, mis koosneb ainult readonly muutmatutest väärtustest. Sarnaselt muude objektide addresseerimisega, saab enumi seest
+        // tema muutujaid lugeda punkti abil. Enum kujutab endast tegelikult täisarvude loendit, millele on antud inimloetavad nimed.
+        enum HäireTase 
+            //enum sätestatakse kaitstud sõnaga "enum", seejärel enumi enda nimi ("HäireTase") ning sellele järgnevas koodiplokis enumi enda väärtused,
+            //eraldatuna komadega.
+        {
+            Madal, Keskmine, Kõrge, Kriitiline
+        }
+
+
         static void Main(string[] args) //<-- "Main" on programmi sees olev meetod mis vaikeväärtusena alati käivitatakse, kui ei ole teist meetodit
                                         //käivituseks määratud
         {
@@ -432,6 +493,26 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //    Console.WriteLine(displayableData);
             //}
 
+            //Teeme auto
+            Car minuParsa = new Car(
+                "Yaris", CarMark.Toyota,
+                "ABC 123",
+                "vene kollane",
+                (decimal)1.67,
+                new List<string> { "uksed", "aknad" }
+                );
+            Console.WriteLine(minuParsa.GetInfo());
+            minuParsa.SeeEquiptment();
+
+            Kordinaat minuAsukoht = new Kordinaat(); //Teeme uue muutuja "minuAsukoht" mille andmetüüp ongi meie enda struct,
+                                                     //kaitstud sõna "new" tekitab sinna sisse uue tühja kordinaadi.
+
+            minuAsukoht.X = 67;     //Lisame oma uuele Kordinaadile X kordinaadi
+            minuAsukoht.Y = 0;      //Lisame ka Y kordinaadi
+            minuAsukoht.Z = 9.5;    //Ning ka Z kordinaadi
+
+            Kordinaat satelliidiPunktMaakohal = new Kordinaat(53.67, 88.94);
+            Console.WriteLine(satelliidiPunktMaakohal.ToString());
 
             /*
                 üleval harjutused
@@ -582,6 +663,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //2. Loend
             //3. Sõnastik
             //4. Tuple
+            //5. Struct
 
             /* 1 - MASSIIV */
             // []       -> Massiiv on komposiitandmetüüp, mille sees saab olla mitmeid sama tüüpi lihtandmeid. Massiivi tähistatakse kantsulgudega.
@@ -696,56 +778,10 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             string pool1 = piparmündiTupla.Item1; // siin asetame muutujasse "pool1" valitud tuplest esimese objekti, ning
             string pool2 = piparmündiTupla.Item2; // seal asetame muutujasse "pool2" valitud tuplest teise objekti
 
-
-            /*  5 - STRUKTUUR */
-            // struct/Struktuur on komposiitandmetüüp, mis sarnaneb klassiga sellepoolest, et erinevalt kõikidest teistest andmetüüpidest, saab
-            // struktuur sisaldada meetodeid ning omadusi. Sarnaselt klassiga, on Struct andmetüübil ka konstruktor, mis ütleb mis selle
-            // struktuuri sees on.
-
-            // Struct anatoomia:
-            // A - Structi jaoks vajalik nimeruumi tekitamine, mis sarnaselt meetodile vajab juurdepääsu modifikaatorit (A.1), andmetüübi nime (A.2) ja
-            //      sätestust et tegu on structiga (A.3). Sätestusele järgneb koodiplokk/konteiner
-            // B - Konstruktor (on sama nagu klassil) ning  defineerib ära spetsiaalse meetodi mis ütleb kuidas *see* struct instantsieeritakse.
-            //      Konstruktorit kasutatakse antud juhul siis structis olevatele väljadele mingite algandmete sisestuseks. Konstruktoreid saab olla mitu.
-            //      "Kordinaat" structil on kaks konstruktorit, esimene kolmemõõtmeline, teine kahemõõtmeline (B.1)
-            // C - Andmeväljad ülevad ära, millised andmed uuel structil on. Olenavalt konstruktorist võib andmevälju olla rohkem või vähem, voi
-            //      omada täielikult erinevaid välju.
-            // D - Struktuuri omadused, nende kaudu saab kasutatavas koodis selle struktuuri andmeid kätte. Adresseeritakse nagu meetodeid teistest
-            //      andmetüüpidest punkti abil, ning peale punkti saab valida soovitud välja.
-            // E - Struktuuris asuvad meetodid, saab kirjutada üle overrideiga vaikemeetodeid või saab omada struktuurile omaseid meetodeid
-
-
-    //A.1   A.2   A.3
-            public struct Kordinaat //A
-        {
-            public Kordinaat(decimal x, decimal y, decimal z) //B
-            {
-                decimal X = x; //C selles konstruktoris on kolm andmevälja
-                decimal Y = y;
-                decimal Z = z;
-            }
+            /* 5 - STRUKTUUR */
+            // faili alguses      /\
+            //                    ||
             
-            public Kordinaat(decimal x, decimal y) // B.1
-            {
-                decimal X = x; //C selles konstruktoris on kolm andmevälja
-                decimal Y = y;
-            } 
-            
-            public double X { get; } //D - struktuuri omadused
-            public double Y { get; }
-            public double Z { get; }
-            //E selle "Kordinaat" struct meetodid:
-            public override string ToString() 
-            {
-                return $"({X},{Y},{Z})";
-            }
-            public void HelloWorld()
-            {
-                Console.WriteLine("Tere maailm.");
-            }
-        }
-            
-
 
 
             /*   -= M U U T U J A   N I M E T A M I N E            */
