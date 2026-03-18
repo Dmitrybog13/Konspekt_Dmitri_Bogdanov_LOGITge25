@@ -4,29 +4,18 @@
     {
         static void Main(string[] args)
         {
-           /* Ülesanne 3 */
-            Console.WriteLine("Mis on sinu viimased mängimis tundid?");
-            float tunde = float.Parse(Console.ReadLine());
-            if (tunde < 0.00)
+            /* Ülesanne 3 */
+            if (Valik == 1)
             {
-                Console.WriteLine("kahju et sul aega mängida pole :c");
-            }
-            else if (tunde <= 10 && tunde >= 0)
-            {
-                Console.WriteLine("mõõdukas mängija, tubli");
-            }
-            else if (tunde <= 20 && tunde >= 10)
-            {
-                Console.WriteLine("natuke paljuks läheb, kodutööd kannatavad");
-            }
-            else if (tunde <= 40 && tunde >= 20)
-            {
-                Console.WriteLine("liiga palju mängid, kas sa kooli üldse nii jõuad?");
-            }
-            else if (tunde <= 999 && tunde >= 40)
-            {
-                Console.WriteLine("siin peaks juba sekkuma psühholoog");
-            }
-        }
-    }
-}
+                Console.Write("kas sa elad kadaka tänaval?: ");
+                string nimi = Console.ReadLine();
+
+                if (nimi != "Ei, elan tapal")
+                {
+                    Console.WriteLine("Who de fuk are u, ma motlesin sa elad kadaka tänaval");
+               
+            
+        
+                     }
+                 }
+            

@@ -5,7 +5,8 @@ using System.Text; //<-- enne nimeruumi, viidatakse selles failis/klassis kasuta
 
 namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit kus asub kogu programmi kood nime all "EsimeneProjekt"
 {
-    internal class Program //<-- programmi klass, mis on ka omakorda konteiner tüüp, Kus sees on kogu programmi kood 
+    internal class Program : IProgram
+    //<-- programmi klass, mis on ka omakorda konteiner tüüp, Kus sees on kogu programmi kood 
     {
         /* 5 - STRUKTUUR */
         // Struct/Struktuur on komposiitandmetüüp, mis sarnaneb klassiga sellepoolest, et erinevalt kõikidest teistest andmetüüpidest, saab
@@ -48,7 +49,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             public double Y { get; set; }
             public double Z { get; set; } = 0;//D.3
             //E selle "Kordinaat" struct meetodid:
-            public override string ToString() 
+            public override string ToString()
             {
                 return $"({X},{Y},{Z})";
             }
@@ -61,9 +62,9 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
         /* 6 - ENUM */
         // Enum on spetsiaalset tüüpi klass, mis koosneb ainult readonly muutmatutest väärtustest. Sarnaselt muude objektide addresseerimisega, saab enumi seest
         // tema muutujaid lugeda punkti abil. Enum kujutab endast tegelikult täisarvude loendit, millele on antud inimloetavad nimed.
-        enum HäireTase 
-            //enum sätestatakse kaitstud sõnaga "enum", seejärel enumi enda nimi ("HäireTase") ning sellele järgnevas koodiplokis enumi enda väärtused,
-            //eraldatuna komadega.
+        enum HäireTase
+        //enum sätestatakse kaitstud sõnaga "enum", seejärel enumi enda nimi ("HäireTase") ning sellele järgnevas koodiplokis enumi enda väärtused,
+        //eraldatuna komadega.
         {
             Madal, Keskmine, Kõrge, Kriitiline
         }
@@ -565,10 +566,10 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             Console.WriteLine(minuLause.ToUpper());             //Sõne meetod .ToUpper() muudab sõnes olevad tähed suurteks tähtedeks
             Console.WriteLine(minuLause.ToLower());             //Sõne meetod .ToLower() muudab sõnes olevad tähed väikesteks tähtedeks
             string tuvastus = "Kas lauses on sõna 'monsterit'?:" + minuLause.ToLower().Contains("monsterit");
-                                                                //Contains tagastab true või false, olenevalt sellest kas objekt sisaldab otsitavat
+            //Contains tagastab true või false, olenevalt sellest kas objekt sisaldab otsitavat
             bool tuvastus2 = minuLause.StartsWith("täna");      //StartsWith tagastab true või false, olenevalt sellest kas objekt algab otsitavaga
             bool tuvastus3 = minuLause.EndsWith("magada");      //EndsWith tagastab true või false, olenevalt sellest kas objekt lõppeb otsitavaga
-            Console.WriteLine(tuvastus);                
+            Console.WriteLine(tuvastus);
             Console.WriteLine(minuLause.Trim());                //Trim eemaldab algusest ja lõpust tühjad tähed nagu space ja reavahetus
             string[] lauseOsad = minuLause.Split(' ');          //Split() tükeldab sõne osadeks, selle tähemärgi pealt mis parameetriks seatud on
             foreach (var osa in lauseOsad)
@@ -596,11 +597,11 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
 
             // + on kahe stringi vahel konkateneerimisoperatsioon, mitte matemaatiline tehe, ning liidab eelmise stringi lõppu järgmise
             // stringi tema algusest et neid kahte ühendada
-            List<string> menüü = new List<string>() {"kiluvõileib","vastlakukkel","hernesupp" };
+            List<string> menüü = new List<string>() { "kiluvõileib", "vastlakukkel", "hernesupp" };
             string väljundLause = "Need on meie menüüs: ";
             foreach (var söök in menüü)
             {
-                väljundLause += " "+söök+",";
+                väljundLause += " " + söök + ",";
             }
             Console.WriteLine(väljundLause);
 
@@ -623,8 +624,8 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             Console.WriteLine("AaF\ba");                    // \b kustutab \ble eelneva tähe kui \b on keset sõne.
             Console.WriteLine(" \" ");                      // \" kuvab teksti sisse '"'
             Console.WriteLine(" \' ");                      // \" kuvab teksti sisse "'"
-            Console.WriteLine("|"+amet.PadLeft(30)+"|");    //.PadLeft() ja .PadRight lisavad vastavalt vasakule poole või paremale poole sõnest tühimikke
-            Console.WriteLine("|"+amet.PadRight(30)+"|");   // kuni parameetris asuva arvuni. kui sõne on pikem kui parameeter, ei lisata midagi
+            Console.WriteLine("|" + amet.PadLeft(30) + "|");    //.PadLeft() ja .PadRight lisavad vastavalt vasakule poole või paremale poole sõnest tühimikke
+            Console.WriteLine("|" + amet.PadRight(30) + "|");   // kuni parameetris asuva arvuni. kui sõne on pikem kui parameeter, ei lisata midagi
             Console.WriteLine("""                           
                                 [Verse 1]
                 We're talking away
@@ -654,7 +655,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             }
 
             //sarnaselt massiivile saab ka elemndi sisu järgi .IndexOf meetodiga teada esimese vastava elemendi indeksit/asukohta massiivis.
-            Console.WriteLine(perekonnanimi.IndexOf("r")); 
+            Console.WriteLine(perekonnanimi.IndexOf("r"));
 
             //Console.ReadLine();
 
@@ -676,7 +677,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                             //muutuja nimi on "uusMassiiv" ning võrdusmärgi taga omistatakse sinna massiiv kolme elemendiga,
                                             //kus mitte ükski elemend hetkel veel väärtust ei oma. Kui mitu elementi väljendatakse kantsulgude vahel,
                                             //peale andmetüüpi ja peale kaitstud sõna "new". New ütleb, et tegu on uue väärtusega selle muutuja sees.
-            // Teine tekitusviis:
+                                            // Teine tekitusviis:
             int[] uusMassiiv2 = [1, 2, 3];  //Teine massiivi tekitusviis kus massiivi pikkuse sätestamise asemel antakse muutujasse kohe kindlate
                                             //väärtustega elemendid kaasa. Massiivi pikkust sätestama ei pea, kuna see tuletatakse sisestatud
                                             //elementide arvust.
@@ -702,16 +703,16 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                                    //andmete andmetüüp, antud juhul on siin täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid
                                                    //hoitakse on "arvuLoend". Sellesse muutujasse omistatakse kaitstud sõna "new" abil uus, PIKKUSETA ja tühi
                                                    //loend täisarvudega. 
-            // Teine tekitusviis:
-            List<int> arvuLoend2 = new List<int>() {1,2,3};     //Teine loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga,
-                                                                //Listi noolsulgude vahel, on loendis olevate andmete andmetüüp, antud juhul on siin
-                                                                //täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid hoitakse on "arvuLoend2". Sellesse
-                                                                //muutujasse omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega, kuid
-                                                                //pärast andmetüübi taga olevaid sulge, anname loogeliste sulgude vahel talle kaasa kohe
-                                                                //ka elemendid. Antud juhul on tegu täisarvudega 1, 2 ja 3. Enam ei ole tegu PIKKUSETA EGA
-                                                                //TÜHJA loendiga, vaid sarnaselt massiivile, tekib selle loendi pikkus, põhinedes sellele
-                                                                //mitu elementi on kaasa antud.
-            // Kolmas tekitusviis:
+                                                   // Teine tekitusviis:
+            List<int> arvuLoend2 = new List<int>() { 1, 2, 3 };     //Teine loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga,
+                                                                    //Listi noolsulgude vahel, on loendis olevate andmete andmetüüp, antud juhul on siin
+                                                                    //täisarvud, ehk "int". Muutuja enda nimeks, kus andmeid hoitakse on "arvuLoend2". Sellesse
+                                                                    //muutujasse omistatakse kaitstud sõna "new" abil uus ja tühi loend täisarvudega, kuid
+                                                                    //pärast andmetüübi taga olevaid sulge, anname loogeliste sulgude vahel talle kaasa kohe
+                                                                    //ka elemendid. Antud juhul on tegu täisarvudega 1, 2 ja 3. Enam ei ole tegu PIKKUSETA EGA
+                                                                    //TÜHJA loendiga, vaid sarnaselt massiivile, tekib selle loendi pikkus, põhinedes sellele
+                                                                    //mitu elementi on kaasa antud.
+                                                                    // Kolmas tekitusviis:
             List<int> arvuLoend3 = new List<int>(3);        //Kolmas loendi tekitusviis, andmetüübi kirjeldus "List<>" näitab et tegu on loendiga, Listi
                                                             //noolsulgude vahel, on loendis olevate andmete andmetüüp, antud juhul on siin täisarvud, ehk
                                                             //"int". Muutuja enda nimeks, kus andmeid hoitakse on "arvuLoend2". Sellesse muutujasse
@@ -725,21 +726,21 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //                          väärtuse andmetüüpi. Need andmetüübid saavad üksteisest erineda või isegi omada klasse andmetüüpidena ning ka
             //                          muid komposiitandmetüüpe.
             // Esimene tekitusviis:
-            Dictionary<int,string> sõnastik = new Dictionary<int, string>();
+            Dictionary<int, string> sõnastik = new Dictionary<int, string>();
             //Andmetüübi kirjeldus "Dictionary<>" näitab et tegu on sõnastikuga, ehk loendiga võtiväärtuspaaridest. Dictionary noolsulgude vahel asetatakse
             //kaks andmetüüpi, esimene neist on võtme andmetüüp (antud juhul "int") teine neist on võtme taga oleva väärtuse andmetüüp (antud juhul "string").
             //Muutuja nimeks on "sõnastik" kuhu omistatakse käsusõnaga "new" uus tühi sõnastik vastavate andmetüüpidega.
 
             // Teine tekitusviis:
-            Dictionary<int,string> sõnastik2 = new Dictionary<int, string>() { { 1, "astelpaju" },{ 2, "muulukas" },{ 3, "maasikas" } };
+            Dictionary<int, string> sõnastik2 = new Dictionary<int, string>() { { 1, "astelpaju" }, { 2, "muulukas" }, { 3, "maasikas" } };
             //Andmetüübi kirjeldus "Dictionary<>" näitab et tegu on sõnastikuga, ehk loendiga võtiväärtuspaaridest. Dictionary noolsulgude vahel asetatakse
             //kaks andmetüüpi, esimene neist on võtme andmetüüp (antud juhul "int") teine neist on võtme taga oleva väärtuse andmetüüp (antud juhul "string").
             //Muutuja nimeks on "sõnastik" kuhu omistatakse käsusõnaga "new" uus sõnastik koos elementidega, mis asuvad sulgude taga olevates loogelistes
             //sulgudes ja iga element ise on veel omakorda loogelistes sulgudes infoga mis vastab dictionary andmetüüpide sätestusele.
 
             //Sõnastiku tööriistad:
-            sõnastik.Add(4, "tikker" );         //.Add() võimaldab olemasoleva sõnaraamatu lõppu lisada elementi. Sulgude vahel on andmed, mille andmetüübid
-                                                //vastavad täiendatava sõnastiku andmetüüpide sätestusega.
+            sõnastik.Add(4, "tikker");         //.Add() võimaldab olemasoleva sõnaraamatu lõppu lisada elementi. Sulgude vahel on andmed, mille andmetüübid
+                                               //vastavad täiendatava sõnastiku andmetüüpide sätestusega.
             sõnastik.Remove(2);                 //.Remove() eemaldab kindla võtme järgi sõnastikus oleva elemendi. Sulgude vahel on selle võtme
                                                 //andmetüübile vastav väärtus mitte võtme taga oleva väärtuse väärtus.
             sõnastik.Clear();                   //.Clear() teeb sõnastiku täielikult tühjaks.
@@ -759,7 +760,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             Tuple<string, string> piparmündiTupla = new Tuple<string, string>("vasak tupla", "parem tupla");
 
             // Esimene tekitusviis:
-            Tuple<bool, int, string> someTuple = new Tuple<bool, int, string>( true, 1, "abc" );
+            Tuple<bool, int, string> someTuple = new Tuple<bool, int, string>(true, 1, "abc");
             //Andmetüüvbi kirjeldus "Tuple<>" ütleb et selles muutujas on mitmik. Selles mitmikus on esimeseks bool teiseks int ja kolmandaks string tüüpi
             //objektid. Tuple vajab ka kohe esmast omistust, seega kaitstud sõna new ja andmetüübi täiskirjeldus "Tuple<bool, int, string>" vajab peale sead
             //sulgude vahele esmaseid andmeid. Antud juhul on siin ( true, 1, "abc" );
@@ -769,7 +770,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             // uue sõnega mis loeks "NJÄM NJÄM NJÄM".
             //Tuplet ei saa muuta, aga seda saab rekombineerida, seega me saame teha nii:
             string uuspool = "NJÄM NJÄM NJÄM";
-            piparmündiTupla = new Tuple<string, string>(piparmündiTupla.Item1,uuspool);
+            piparmündiTupla = new Tuple<string, string>(piparmündiTupla.Item1, uuspool);
 
             //Tuple adresseerimine:
             // justnagu eelnevalt näidatud, me sasame adresseerida tuple erinevaid objekte siiski eraldi. Selle jaoks on iga tekitatud Tuple sees genereeritud
@@ -781,7 +782,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             /* 5 - STRUKTUUR */
             // faili alguses      /\
             //                    ||
-            
+
 
 
             /*   -= M U U T U J A   N I M E T A M I N E            */
@@ -817,7 +818,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             int miski2 = juhuarv.Next(-5, 5);   //.Next() kahe parameetriga kirjeldab ära täieliku vahemiku, olgu see siis negatiivne või positiivne
             double aDbl = juhuarv.NextDouble(); //.NextDouble() annab double-tüüpi väärtusi, parameetri kasutus on identne.
             float aLng = juhuarv.NextSingle();  //.NextSingle() annab float-tüüpi väärtuse mis on vahemikus 0.0 ja 1.0.
-            
+
 
             /*   -= K A I T S T U D   S Õ N A D =-                  */
             //
@@ -1005,7 +1006,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                                     //tsükkel töötab veel ühe ringi, kui tingimus ei täitu, siis ei täideta ka järgnevat ringi, ning
                                                     //tsükli töö katkeb. Antud juhul kontrollitakse, et tsüklimuutuja ei oleks võrdne sõnega kus on
                                                     //tähemärk arvu 0 jaoks.
-            {                  
+            {
                 Console.WriteLine("esita tekst:");  //Koodiploki "{}" sees olev tegevus, antud juhul küsitakse kasutajalt teksti esitust
                 tsükliMuutuja2 = Console.ReadLine();//mis seejärel omistatakse tsüklimuutuja enda sisse.
             }
@@ -1028,8 +1029,8 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                                                         //lauselõpumärgiga välja arvatud viimane, viimase lõpetab sulg.
                                                         //Sulgudele järgneb koodiplokk {}
             {
-                Console.WriteLine("sisesta "+k+". arv");//Tegevus koodiploki sees, kus küsitakse kasutades tsüklimuutujat, kasutajalt
-                                                        //järgmist/mingindat arvu.
+                Console.WriteLine("sisesta " + k + ". arv");//Tegevus koodiploki sees, kus küsitakse kasutades tsüklimuutujat, kasutajalt
+                                                            //järgmist/mingindat arvu.
                 arvuMassiiv[k] = int.Parse(Console.ReadLine());//Kasutades tsüklimuutujat, täidetakse massiiv.
             }
 
@@ -1040,7 +1041,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             //ainult läbi selle töödeldava kollektsiooni enda, st seda et tsüklimuutuja on kollektsiooni elementide arv, selle tsükli jaoks EI TEKITATA
             //eraldi muutujat.
 
-            List<string> sõnad = new List<string>() {"maasikas","muulukas","mustikas" }; //Muutuja, kus on andmed, mida tsükkel läbi töötleb.
+            List<string> sõnad = new List<string>() { "maasikas", "muulukas", "mustikas" }; //Muutuja, kus on andmed, mida tsükkel läbi töötleb.
             foreach (var üksSõna in sõnad)      //Kaitstud sõna "foreach" alustab foreach tsükli, pärast mida on sulud mille vahel on tsükli tööd
                                                 //kontrolliv tingimus. Selle tingimuse sees tekitatakse ajutine muutuja andmetüübiga "var" 
                                                 //töödeldava andmekogumi üksikelemendi jaoks. Tingimuse keskel on teine kaitstud sõna "in" mis
@@ -1169,7 +1170,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
         }
 
         // 2. tüüpi meetod - tagastab mingisuguse väärtuse või mingeid andmeid:
-        int[] arvutatavadArvud = new int[] {67,69,420,9001 }; //Töödeldavad andmed, mis asuvad täisarvumassiivis *VÄLJASPOOL* meetodit.
+        int[] arvutatavadArvud = new int[] { 67, 69, 420, 9001 }; //Töödeldavad andmed, mis asuvad täisarvumassiivis *VÄLJASPOOL* meetodit.
         // A      A    B       C         D
         public static int ArvutaKokku(int[] arvud)  //Meetodi signatuur: omab juurdepääsumodifikaatorit "public", asub selles klassis, tagastustüüp
                                                     //"int" ütleb et meetod tagastab andmeid üksiku täisarvuna. Meetodi nimi on "ArvutaKokku", ning
@@ -1220,7 +1221,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
                         Console.WriteLine("Saad juua kuni 4 liitrit monsterit");
                     }
                 }
-                else 
+                else
                 {
                     Console.WriteLine("Saad juua 2 liitrit monsterit");
                 }
@@ -1228,7 +1229,7 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
         }
 
         /* parameetrite vaikeväärtus */
-        public string KeskmineTase(float veetase = 1.5f)    //Meetodi signatuuris on asetatud sulgude vahele üks parameeter "veetase" mille taga on võrdusmärk
+        /public string KeskmineTase(float veetase = 1.5f)    //Meetodi signatuuris on asetatud sulgude vahele üks parameeter "veetase" mille taga on võrdusmärk
                                                             //väärtusega. Meetodi signatuuris ütleb võrdusmärk, et tegu on väikeväärtusega, ning kui meetodile
                                                             //ei anta kaasa sissetulevat väärtust, arvestatakse et väärtuseks on sulgude taga olev anne.
                                                             //Antud juhul 1.5f
@@ -1241,97 +1242,40 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             {
                 return "normaalne";
             }
-            
-            
-            Console.WriteLine("Vali ülesanne (1-4): ");
-        int valik = int.Parse(Console.ReadLine());
 
-        // 1
-        if (valik == 1)
-        {
-            Console.Write("Sisesta oma nimi: ");
-            string nimi = Console.ReadLine();
 
-            if (nimi != "Nipitiri")
+          
+
+            // 4
+            else if (valik == 4)
             {
-                Console.WriteLine("Sa pole Nipitiri, ootan ainult Nipitirit!");
-            }
-        }
+                Console.Write("Sisesta punktid: ");
+                int punktid = int.Parse(Console.ReadLine());
 
-        // 2
-        else if (valik == 2)
-        {
-            Console.Write("Kas sulle meeldivad tublid? (jah/ei): ");
-            string vastus = Console.ReadLine().ToLower();
-
-            if (vastus == "jah")
-            {
-                Console.WriteLine("Mulle kaaa!");
+                if (punktid == 0)
+                {
+                    Console.WriteLine("oled VA?");
+                }
+                else if (punktid == 2)
+                {
+                    Console.WriteLine("täitsa ok");
+                }
+                else if (punktid == 4)
+                {
+                    Console.WriteLine("hea töö");
+                }
+                else
+                {
+                    Console.WriteLine("wow, messi");
+                }
             }
+
             else
             {
-                Console.WriteLine("Ei saa kasutajast aru.");
+                Console.WriteLine("Vale valik.");
             }
-        }
-
-        // 3
-        else if (valik == 3)
-        {
-            Console.Write("Mitu tundi mängisid eelmisel nädalal? ");
-            int tunnid = int.Parse(Console.ReadLine());
-
-            if (tunnid == 0)
-            {
-                Console.WriteLine("Viimane nädal oli igav.");
-            }
-            else if (tunnid >= 1 && tunnid <= 2)
-            {
-                Console.WriteLine("Mõõdukas mängija.");
-            }
-            else if (tunnid >= 3 && tunnid <= 9)
-            {
-                Console.WriteLine("Liigne mängija, tubli pole.");
-            }
-            else if (tunnid >= 10 && tunnid <= 19)
-            {
-                Console.WriteLine("Liiga palju mängid, kas oled sõltlane?");
-            }
-            else if (tunnid >= 20)
-            {
-                Console.WriteLine("Siin peaks juba sekkuma psühholoog.");
-            }
-        }
-
-        // 4
-        else if (valik == 4)
-        {
-            Console.Write("Sisesta punktid: ");
-            int punktid = int.Parse(Console.ReadLine());
-
-            if (punktid == 0)
-            {
-                Console.WriteLine("oled VA?");
-            }
-            else if (punktid == 2)
-            {
-                Console.WriteLine("täitsa ok");
-            }
-            else if (punktid == 4)
-            {
-                Console.WriteLine("hea töö");
-            }
-            else
-            {
-                Console.WriteLine("wow, messi");
-            }
-        }
-
-        else
-        {
-            Console.WriteLine("Vale valik.");
         }
     }
-}
-        }
-    }
-}
+        
+    
+
