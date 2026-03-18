@@ -1241,6 +1241,97 @@ namespace EsimeneProjekt //<-- nimeruum, sisaldab {} sulgude vahel konteinerit k
             {
                 return "normaalne";
             }
+            
+            
+            Console.WriteLine("Vali ülesanne (1-4): ");
+        int valik = int.Parse(Console.ReadLine());
+
+        // 1
+        if (valik == 1)
+        {
+            Console.Write("Sisesta oma nimi: ");
+            string nimi = Console.ReadLine();
+
+            if (nimi != "Nipitiri")
+            {
+                Console.WriteLine("Sa pole Nipitiri, ootan ainult Nipitirit!");
+            }
+        }
+
+        // 2
+        else if (valik == 2)
+        {
+            Console.Write("Kas sulle meeldivad tublid? (jah/ei): ");
+            string vastus = Console.ReadLine().ToLower();
+
+            if (vastus == "jah")
+            {
+                Console.WriteLine("Mulle kaaa!");
+            }
+            else
+            {
+                Console.WriteLine("Ei saa kasutajast aru.");
+            }
+        }
+
+        // 3
+        else if (valik == 3)
+        {
+            Console.Write("Mitu tundi mängisid eelmisel nädalal? ");
+            int tunnid = int.Parse(Console.ReadLine());
+
+            if (tunnid == 0)
+            {
+                Console.WriteLine("Viimane nädal oli igav.");
+            }
+            else if (tunnid >= 1 && tunnid <= 2)
+            {
+                Console.WriteLine("Mõõdukas mängija.");
+            }
+            else if (tunnid >= 3 && tunnid <= 9)
+            {
+                Console.WriteLine("Liigne mängija, tubli pole.");
+            }
+            else if (tunnid >= 10 && tunnid <= 19)
+            {
+                Console.WriteLine("Liiga palju mängid, kas oled sõltlane?");
+            }
+            else if (tunnid >= 20)
+            {
+                Console.WriteLine("Siin peaks juba sekkuma psühholoog.");
+            }
+        }
+
+        // 4
+        else if (valik == 4)
+        {
+            Console.Write("Sisesta punktid: ");
+            int punktid = int.Parse(Console.ReadLine());
+
+            if (punktid == 0)
+            {
+                Console.WriteLine("oled VA?");
+            }
+            else if (punktid == 2)
+            {
+                Console.WriteLine("täitsa ok");
+            }
+            else if (punktid == 4)
+            {
+                Console.WriteLine("hea töö");
+            }
+            else
+            {
+                Console.WriteLine("wow, messi");
+            }
+        }
+
+        else
+        {
+            Console.WriteLine("Vale valik.");
+        }
+    }
+}
         }
     }
 }
