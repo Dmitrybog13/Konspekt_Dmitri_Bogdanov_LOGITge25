@@ -4,7 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            // 1 - Tee Player klass, koos viie andmeväljaga
+            //     Player klassis on üks konstruktor, kus kasutatakse kõiki andmeid
+            //     Andmeväljad on: Lives, Health, Location (struct kus on X ja Y), Backpack, Money
+            //     Vaikeväärtused on Lives (3) ja Health (100)
         }
     }
 }
