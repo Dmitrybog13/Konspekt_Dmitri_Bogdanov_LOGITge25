@@ -5,13 +5,13 @@
         static void Main(string[] args)
         {
             /* ülesanne 1 */
-            /* Console.WriteLine("Kas sa elad Kadaka Tänaval?");
+            Console.WriteLine("Kas sa elad Kadaka Tänaval?");
             string koht = Console.ReadLine();
 
             if (koht != "Kadaka Tänav")
             {
                 Console.WriteLine("Kas kadakast vestad ka midagi?");
-            } */
+            }
 
             /* ülesanne 2 */
             /* Console.WriteLine("Kas sulle meeldib vaniljejäätis?");
@@ -28,7 +28,7 @@
             /* Ülesanne 3 */
             //Console.WriteLine("Mis on sinu viimased õppetunde tunde?");
             //float tunde = float.Parse(Console.ReadLine());
-            //if (tunde < 0.00)
+            //if (tunde > 0.00)
             //{
             //    Console.WriteLine("Kahju et sa endast lugu ei pea :c");
             //}
